@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="{% static '/css/mycss.css' %}">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<title>登录</title>
+<style>
+    .err-hint{
+        color: red;
+    }
+</style>
+<body>
+
+<div data-role="page">
+  <div data-role="main" class="ui-content">
+    {%csrf_token%}
+    <form method="post" action="/login/" enctype="multipart/form-data">
+        {{ lf.as_p }}
+{#      <label for="name">用户名：</label>#}
+{#      <input type="text" name="name" id="name" required="required">#}
+{#        <label for="passwd">密码：</label>#}
+{#      <input type="password" name="passwd" id="passwd" required="required">#}
+{#      <input type="submit" data-inline="true" value="提交">#}
+      <input type="submit"  value="提交">
+      <label class="err-hint">{{ error }}</label>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

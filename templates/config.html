@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="{% static '/css/mycss.css' %}">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+  <div data-role="header">
+      <h1>设置</h1>
+{#      <a href="#" style="height: 15px;background: #e9e9e9; border: none;" onclick="javascript:history.back(-1);" class="ui-btn ui-icon-carat-l ui-btn-icon-left"></a>#}
+      <a href="/index/" style="height: 15px;background: #e9e9e9; border: none;" class="ui-btn ui-icon-carat-l ui-btn-icon-left"></a>
+  </div>
+
+
+  <div data-role="main" class="ui-content">
+    <form method="post" action="/config/" enctype="multipart/form-data">
+      <div class="ui-field-contain">
+
+          {% if not bindUser %}
+                <label >登录用户将绑定以下输入的帐号</label>
+                <label for="username">党建云用户名：</label>
+                <input type="text" name="username" id="username" required="required">
+                <label for="passwd">密码：</label>
+                <input type="password" name="passwd" id="passwd" required="required">
+        {#        <label for="time">选择时间：</label>#}
+                <label for="time">目前自动执行时间为每日0:10</label>
+                <label for="time" class="ret-msg">{{ retmsg }}</label>
+          {% else %}
+                <label >当前用户已绑定党建云帐号：{{ bindUser }}</label>
+          {% endif %}
+
+      </div>
+{#      <input type="submit" value="绑定帐号">#}
+        {% if bindUser %}
+          <a href="/functions/?act=unbind" class="ui-btn" id="unbind">解除绑定</a>
+        {% else %}
+          <input type="submit" value="绑定帐号">
+        {% endif %}
+
+
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

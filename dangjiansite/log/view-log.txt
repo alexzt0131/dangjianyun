@@ -1,0 +1,5 @@
+2018-03-21 21:30:42,771 - test.py[line:516] - ERROR: msg: division by zero.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/test.py", line 513, in <module>
+    1/0
+ZeroDivisionError: division by zero

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="{% static '/css/mycss.css' %}">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<div data-role="page">
+  <div data-role="header">
+    <h1>详细信息</h1>
+      <a href="javascript:history.go(-1)" style="height: 15px;background: #e9e9e9; border: none;" class="ui-btn ui-icon-carat-l ui-btn-icon-left"></a>
+{#      <a href="/index/" style="height: 15px;background: #e9e9e9; border: none;" class="ui-btn ui-icon-carat-l ui-btn-icon-left"></a>#}
+  </div>
+
+  <div data-role="main" class="ui-content">
+      {% for data in datas %}
+        <label class="title-lable"><b>信息评论详细:</b></label><label class="content-lable">{{ data.thumbDetail }}</label>
+        <p><label class="title-lable"><b>党员视角发布详细:</b></label><label class="content-lable">{{ data.viewDetail }}</label></p>
+        <p><label class="title-lable"><b>互助广场回答详细:</b></label><label class="content-lable">{{ data.hlepDetail }}</label></p>
+        <p><label class="title-lable"><b>在线阅读学习资料详细:</b></label><label class="content-lable">{{ data.study1Detail }}</label></p>
+        <p><label class="title-lable"><b>学习资料写体会详细:</b></label><label class="content-lable">{{ data.study2Detail }}</label></p>
+        <p><label class="title-lable"><b>在线知识竞答详细:</b></label><label class="content-lable">{{ data.examDetail }}</label></p>
+      {% endfor %}
+
+
+  </div>
+
+{#  <div data-role="footer">#}
+{#    <h1>底部文本</h1>#}
+{#  </div>#}
+</div>
+
+</body>
+</html>

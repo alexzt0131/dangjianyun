@@ -1,0 +1,31 @@
+#exit-btn{
+    background: red;
+    color: #f9f9f9;
+
+}
+#exit-btn:hover{
+    background: brown;
+}
+
+.footer{
+    width:91%;
+    position: absolute;
+    bottom: 0;
+}
+.ret-msg{
+    color: red;
+}
+.key-lable{
+    float: left;
+}
+.value-lable {
+    float: right;
+}
+#unbind{
+    color: whitesmoke;
+    background: red;
+}
+.title-lable{
+    /*font-weight:bold;*/
+    font-weight: 900
+}

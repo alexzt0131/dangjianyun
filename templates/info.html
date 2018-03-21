@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="{% static '/css/mycss.css' %}">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+    {#.key-lable{#}
+    {#    float: left;#}
+    {#}#}
+    {#.value-lable{#}
+    {#    float: right;#}
+    {#}#}
+</style>
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>我的积分</h1>
+            <a href="/index/" style="height: 15px;background: #e9e9e9; border: none;" class="ui-btn ui-icon-carat-l ui-btn-icon-left"></a>
+
+  </div>
+
+
+{#    {% for key,val in datas.items %}#}
+{#        {{ key }}{{ val }}#}
+{#    {% endfor %}#}
+
+
+  <div data-role="main" class="ui-content">
+
+
+
+      <ul data-role="listview" data-icon="false" data-inset="true">
+          <li data-role="list-divider">今日得分</li>
+          <li style="background: #f6f6f6">
+{#              <a href="#">#}
+                <p><label class="key-lable">用户:</label><label class="value-lable">{{ userinfo.username }}</label></p>
+                <p><label class="key-lable">当前等级:</label><label class="value-lable">{{ userinfo.currentLevel }}</label></p>
+                <p><label class="key-lable">总分:</label><label class="value-lable">{{ userinfo.gainScore }}/{{ userinfo.fullScore }}</label></p>
+                {% for k,v in scores.items %}
+                    <p><label class="key-lable">{{ k }}</label><label class="value-lable">{{ v }}</label></p>
+                {% endfor %}
+{#              </a>#}
+          </li>
+      </ul>
+
+
+
+
+
+
+
+
+
+{#占位置#}
+{#    <div data-role="collapsible">#}
+{#    <h4></h4>#}
+{#    <ul data-role="listview">#}
+{#      <li><a href="#"></a></li>#}
+{#      <li><a href="#"></a></li>#}
+{#    </ul>#}
+{#    </div>#}
+
+
+    <div data-role="collapsible">
+    <h4>得分记录</h4>
+
+<ul data-role="listview" data-inset="true">
+{#{% for d in dailyDetail %}#}
+{#    {{ d.create_date }}#}
+{#    {{ d.thumbDetail }}#}
+{#{% endfor %}#}
+{#    {{ dailyInfo }}#}
+    {% for daily in dailyInfo %}
+        <li data-role="list-divider">{{ daily.create_day }}</li>
+          <li><a href="/showDetail/?date={{ daily.create_day }}">
+              <p><label class="key-lable">手机端登录:</label><label class="value-lable">{{ daily.mobileLogin }}</label></p>
+              <p><label class="key-lable">连续登录:</label><label class="value-lable">{{ daily.conLogin }}</label></p>
+              <p><label class="key-lable">信息评论:</label><label class="value-lable">{{ daily.thumb }}</label></p>
+              <p><label class="key-lable">党员视角发布:</label><label class="value-lable">{{ daily.view }}</label></p>
+              <p><label class="key-lable">互助广场回答:</label><label class="value-lable">{{ daily.hlep }}</label></p>
+              <p><label class="key-lable">在线知识竞答:</label><label class="value-lable">{{ daily.exam }}</label></p>
+              <p><label class="key-lable">在线阅读学习资料:</label><label class="value-lable">{{ daily.study1 }}</label></p>
+              <p><label class="key-lable">学习资料写体会:</label><label class="value-lable">{{ daily.study2 }}</label></p>
+          </a>
+         </li>
+    {% endfor %}
+
+
+
+{#      <li data-role="list-divider">周x, x 月 x 日, xxxx</li>#}
+{#      <li><a href="#">#}
+{#        <p><label class="key-lable">总分:</label><label class="value-lable">{{ userinfo.gainScore }}/{{ userinfo.fullScore }}</label></p>#}
+{##}
+{#      </a></a>#}
+{#      </li>#}
+    </ul>
+
+
+
+
+{#    循环输出以往的记录点击链接查看详细#}
+{#        {% for i in '123' %}#}
+{#            {{ forloop.counter }}#}
+{#        <li><a href="#">Billy</a></li>#}
+{#        {% endfor %}#}
+
+{#       <li><a href="#">Billy</a></li>#}
+{#       <li><a href="#">Bob</a></li>#}
+
+
+
+
+
+
+  </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+{#('5', {'信息评论': '0/10', '党员视角发布': '0/4',#}
+{#'在线知识竞答': '0/4', '连续登录': '3/3', '在线阅读学习资料': '0/5',#}
+{#'互助广场回答': '0/2', '手机端登录': '2/2', '学习资料写体会': '0/5'})#}
+
+

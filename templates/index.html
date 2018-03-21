@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="{% static '/css/mycss.css' %}">
+<script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+    #exit-btn{
+        background: red;
+        color: #f9f9f9;
+
+    }
+    #exit-btn:hover{
+        background: brown;
+    }
+
+    .footer{
+        width:91%;
+        position: absolute;
+        bottom: 0;
+    }
+</style>
+
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+  <div data-role="main" class="ui-content">
+    <h2 style="text-align: center;">{{ loginUser }}</h2>
+    <ul data-role="listview" data-inset="true">
+        <li data-icon="false"><a href="/info/">我的信息</a></li>
+        <li data-icon="false"><a href="/config/">设置</a></li>
+
+
+
+{#        <div data-role="main" class="ui-content">#}
+{#            <a href="#pagetwo" id="navdown" class="ui-btn">立即执行</a>#}
+{##}
+{#            <a id='navdown' class="ui-btn">退出登录</a>#}
+{#        </div>#}
+
+
+{#        列表的样式#}
+{#      <li><a href="#">我的信息</a></li>#}
+{#      <li data-icon="plus"><a href="#">data-icon="plus"</a></li>#}
+{#      <li data-icon="minus"><a href="#">data-icon="minus"</a></li>#}
+{#      <li data-icon="delete"><a href="#">data-icon="delete"</a></li>#}
+{#      <li data-icon="location"><a href="#">data-icon="location"</a></li>#}
+{#      <li data-icon="false"><a href="#">data-icon="false"</a></li>#}
+    </ul>
+
+      <div data-role="footer" class="footer" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      <a href="#pagetwo"  class="ui-btn ui-corner-all ui-shadow ">立即执行</a>
+      <a href="/logout/" id="exit-btn"class="ui-btn ui-corner-all ui-shadow ">退出登录</a>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+{#        这个是点击立即执行后弹出的页面，内容待构造#}
+        <div data-role="page" data-dialog="true" id="pagetwo">
+          <div data-role="header">
+            <h1>消息提示：</h1>
+          </div>
+
+          <div data-role="main" class="ui-content">
+{#            <p>{{ retmsg }}</p>#}
+            <p>暂未开通</p>
+            <p>程序将在0:10自动执行</p>
+            <a href="#pageone" class="ui-btn">确定</a>
+          </div>
+
+        </div>
+
+
+
+</body>
