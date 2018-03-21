@@ -30,7 +30,7 @@ run = Runner(username=userobj.idjinfo.djusername, password=decodeStr(userobj.idj
 import logging
 
 logging.basicConfig(level=logging.WARNING,
-                    filename='./log/{}-log.txt'.format(userobj.idjinfo.djusername),
+                    filename='./log/{}-log.txt'.format('dangJianCmd'),
                     filemode='a',
                     format='%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s')
 
