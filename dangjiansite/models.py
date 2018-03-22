@@ -98,6 +98,7 @@ class ThumbLog(models.Model):
 class ExamInfo(models.Model):
     idjinfo = models.ForeignKey('DjInfo', null=True, blank=True, verbose_name='党建用户')
     create_day = models.CharField(max_length=50, verbose_name='创建日期', default=getFormedDateStr())
+    create_time = models.CharField(max_length=50, verbose_name='创建时间', default=datetime.datetime.now().strftime("%H:%M:%S"))
     question = models.TextField(max_length=500, verbose_name='问题')
     answer = models.CharField(max_length=50, verbose_name='答案')
     answerText = models.CharField(max_length=50, verbose_name='文本答案')
@@ -120,3 +121,41 @@ class Qa(models.Model):
     def __str__(self):
         return '{}:{}\n{}'.format(self.question, self.answerText, self.answer)
 
+class StudyInfo(models.Model):
+    idjinfo = models.ForeignKey('DjInfo', null=True, blank=True, verbose_name='党建用户')
+    create_day = models.CharField(max_length=50, verbose_name='创建日期', default=getFormedDateStr())
+    create_time = models.CharField(max_length=50, verbose_name='创建时间', default=datetime.datetime.now().strftime("%H:%M:%S"))
+    reply = models.TextField(max_length=500, verbose_name='回复内容')
+    title = models.CharField(max_length=150, verbose_name='标题')
+    def __str__(self):
+        return '{}:{}\n{}'.format(self.idjinfo, self.create_day, self.title)
+
+class HelpInfo(models.Model):
+    idjinfo = models.ForeignKey('DjInfo', null=True, blank=True, verbose_name='党建用户')
+    create_day = models.CharField(max_length=50, verbose_name='创建日期', default=getFormedDateStr())
+    create_time = models.CharField(max_length=50, verbose_name='创建时间', default=datetime.datetime.now().strftime("%H:%M:%S"))
+    reply = models.TextField(max_length=500, verbose_name='回复内容')
+    title = models.CharField(max_length=50, verbose_name='标题')
+    def __str__(self):
+        return '{}:{}\n{}'.format(self.idjinfo, self.create_day, self.title)
+
+class ViewInfo(models.Model):
+    idjinfo = models.ForeignKey('DjInfo', null=True, blank=True, verbose_name='党建用户')
+    create_day = models.CharField(max_length=50, verbose_name='创建日期', default=getFormedDateStr())
+    create_time = models.CharField(max_length=50, verbose_name='创建时间',
+                                   default=datetime.datetime.now().strftime("%H:%M:%S"))
+    pub_content = models.TextField(max_length=500, verbose_name='回复内容')
+
+
+    def __str__(self):
+        return '{}:{}\n{}'.format(self.idjinfo, self.create_day, self.pub_content)
+
+class ThumbInfo(models.Model):
+    idjinfo = models.ForeignKey('DjInfo', null=True, blank=True, verbose_name='党建用户')
+    create_day = models.CharField(max_length=50, verbose_name='创建日期', default=getFormedDateStr())
+    create_time = models.CharField(max_length=50, verbose_name='创建时间',
+                                   default=datetime.datetime.now().strftime("%H:%M:%S"))
+    reply = models.TextField(max_length=500, verbose_name='回复内容')
+    title = models.CharField(max_length=150, verbose_name='标题')
+    def __str__(self):
+        return '{}:{}\n{}'.format(self.idjinfo, self.create_day, self.title)

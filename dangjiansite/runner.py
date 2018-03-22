@@ -30,7 +30,7 @@ class Runner():
     # def __init__(self, appid='TJZHDJ01', username='024549', password='Aa1234'):
     def __init__(self, appid='TJZHDJ01', username='', password=''):
         urllib3.disable_warnings()#屏蔽ssl告警
-        self.currentTime = datetime.datetime.now().strftime("%Y%m%m%H%M%S")
+        self.currentTime = datetime.datetime.now().strftime("%H:%M:%S")
         self.username = username
         self.password = password
         self.thumbedFilePath = './lib/'.format(username)
@@ -312,11 +312,12 @@ class Runner():
                         log = '信息点赞：\n主题: {}\n提交：{}'.format(i[0], data['comment'])
                         detail = '{} 主题:{}\n回复:{}\n'.format(self.getCurrentTime(), i[0], data['comment'])
                         write2File(self, './results/', 'result.txt', log)
+                        thumbInfo = {'title': i[0], 'reply': data['comment']}
 
                 self.thumbPages.remove(id)
                 self.writeThumb2File(id=id)
 
-                return detail
+                return (detail, thumbInfo)
         elif rjson['code'] == '500' and rjson['msg'] == '评论过快，请求休息一会':
             time.sleep(15)
         else:
@@ -336,6 +337,8 @@ class Runner():
         :return:
         '''
         detail = ''
+        helpInfo = None
+        log = ''
         content = [
             '把党的政治建设摆在首位!',
             '不忘初心，牢记使命！',
@@ -372,36 +375,16 @@ class Runner():
                         write2File(self, './results/', 'result.txt', log)
                         # #写入数据库
                         detail = '{} 主题： {}\n提交内容： {}\n'.format(curTime, i[0], rjson['comment'].strip())
-
-                        # if callback:
-                        #     callback(request, )
-
-
-                        # dobj = getDailyDetailObj(request)
-                    #             print('*' * 88)
-                    #             print(detail)
-                    #
-                    #             print(dobj)
-                    #             try:
-                    #                 dobj.hlepDetail += '{}<br/>'.format(detail)
-                    #             except Exception as e:
-                    #                 dobj.hlepDetail = ''
-                    #                 pass
-                    #             text = dobj.hlepDetail
-                    #             pat = r'<br/>'
-                    #             s = re.compile(pat).sub('', text)
-                    #             print(s)
-                    #             dobj.hlepDetail = s
-                    #
-                    #             dobj.save()
-
+                        helpInfo = {'title': i[0], 'reply': rjson['comment']}
+            else:
+                pass
         else:
             pass
 
         log = '帮助：{}'.format(rjson)
         self.writeLog2File(log)
         print(log)
-        return (detail, log)
+        return (detail, log, helpInfo)
 
     def doView(self):
         '''
@@ -432,13 +415,14 @@ class Runner():
 
         log = '党员视角：{}'.format(rjson)
         detail = '{} 党员视角:\n发布内容:{}\n'.format(self.getCurrentTime(), rjson['data']['content'])
+        publicContent = rjson['data']['content']
         # print(detail)
         # self.writeLog2File(log)
         # print('党员视角'*12)
         # print(id)
         # print(log)
         # print('党员视角' * 12)
-        return detail
+        return (detail, publicContent)
 
     def doStudy(self, mid):
         '''
@@ -563,6 +547,7 @@ class Runner():
                 print('已用时{}秒'.format(count))
             time.sleep(1)
         # time.sleep(5)
+        print('填写的学习体会', content)
         self.studyRsults.update(recordFeeling(content=content))
         time.sleep(1)
         readTime()
@@ -655,7 +640,7 @@ class Runner():
             print(qa, i['content'])
             answers.append(temp)
             time.sleep(1)
-        print(answers)
+        # print(answers)
         hdata = {
             'token': self.token,
             'appid': self.appid,
@@ -663,7 +648,7 @@ class Runner():
             'answers': json.dumps(answers),
             # 'answers': [{'answer': 'A', 'index': '639'}, {'answer': 'A', 'index': '639'}],
         }
-        print('hdata:', hdata)
+        # print('hdata:', hdata)
         commitUrl = 'https://mapi.dangjianwang.com/v3_1/exam/handpaper'
         rjson = self.session.post(url=commitUrl,
                                   data=hdata,

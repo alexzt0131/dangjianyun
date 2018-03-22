@@ -3,3 +3,10 @@ Traceback (most recent call last):
   File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/test.py", line 513, in <module>
     1/0
 ZeroDivisionError: division by zero
+2018-03-22 15:19:54,179 - dangJianCmd.py[line:382] - ERROR: msg: 'NoneType' object is not iterable.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/dangJianCmd.py", line 379, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/dangJianCmd.py", line 320, in thumbTen
+    detail, thumbInfo = run.doThumb(id=id)
+TypeError: 'NoneType' object is not iterable

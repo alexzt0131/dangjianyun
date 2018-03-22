@@ -13,7 +13,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 
-from dangjiansite.models import User, DjInfo, DailyResult, DailyDetail, ErrLog, ThumbLog
+from dangjiansite.models import User, DjInfo, DailyResult, DailyDetail, ErrLog, ThumbLog, ThumbInfo, StudyInfo, \
+    HelpInfo, ViewInfo, ExamInfo
 from dangjianyun import settings
 from dangjiansite.djfuncs import decodeStr, getFormedDateStr, checkScore
 from dangjiansite.runner import Runner
@@ -746,6 +747,7 @@ def showDetail(request):
         'retmsg': '',
         'datas': None,
         'loginUser': loginUser,
+        'sdatas': None,
     }
     try:
         loginUserObj = User.objects.get(username=loginUser)
@@ -758,9 +760,14 @@ def showDetail(request):
         if date:
             detailObj = DailyDetail.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
             ret['datas'] = detailObj
-            # for i in detailObj:
-            #     print(i.)
-            # print(detailObj[0].examDetail)
+            ################################各项表格独立的########################################
+            thumbs = ThumbInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
+            studys = StudyInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
+            helps = HelpInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
+            views = ViewInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
+            exams = ExamInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
+            ret['sdatas'] = (thumbs, helps, views, exams, studys)
+
 
     return render(request, 'showDetail.html', ret)
 

@@ -139,7 +139,8 @@ def write2File(run, path, filename, content):
 
 def getAnswersFromFile():
     answers = []
-    filePath = './answers/new19.csv'
+    filePath = './answers/new19.csv'#生产环境中要改为绝对路径
+    # filePath = '/home/ubuntu/dangjianyun/dangjiansite/answers/new19.csv'
     # filePath = '../static/answers/new19.csv'
 
     with open(filePath, 'r', encoding='utf8') as f:

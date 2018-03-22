@@ -11,3 +11,11 @@
 20180303150103:学习post3：{'data': '4471', 'msg': '操作成功', 'code': '200'}
 20180303150103:学习recordFeeling：{'msg': '操作成功', 'code': '200'}
 20180303150103:学习readTime：{'msg': '操作成功', 'code': '200'}
+15:18:32:点赞：{'msg': '评论过快，请求休息一会', 'code': '500'}
+15:18:32:帮助：{'praises': '0', 'msg': '操作成功', 'special_name': '', 'is_praised': '0', 're_cmt': {'name': '', 'comment': ''}, 'name': '刘耀彬', 'special': '0', 'id': '7601006', 'code': '200', 'comment': '不忘初心，牢记使命！', 'favicon': 'https://mapi.dangjianwang.com/static/images/v3/myhead.png', 'special_rgb': '', 'time': '2018-03-22 15:20', 'uid': '261562'}
+15:18:32:帮助：{'praises': '0', 'msg': '操作成功', 'special_name': '', 'is_praised': '0', 're_cmt': {'name': '', 'comment': ''}, 'name': '刘耀彬', 'special': '0', 'id': '7601008', 'code': '200', 'comment': '发展史第一要务，人才是第一资源，创新是第一动力。', 'favicon': 'https://mapi.dangjianwang.com/static/images/v3/myhead.png', 'special_rgb': '', 'time': '2018-03-22 15:20', 'uid': '261562'}
+15:18:32:学习post1：{'msg': '操作成功', 'code': '200', 'type': '1'}
+15:18:32:学习post2：{'msg': '操作成功', 'code': '200'}
+15:18:32:学习post3：{'data': '5831', 'msg': '操作成功', 'code': '200'}
+15:18:32:学习recordFeeling：{'msg': '操作成功', 'code': '200'}
+15:18:32:学习readTime：{'msg': '操作成功', 'code': '200'}
