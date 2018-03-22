@@ -17,7 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 
 
-from dangjiansite.views import adduser1, do_login, info, index, config, functions, do_logout, showDetail
+from dangjiansite.views import adduser, do_login, info, index, config, functions, do_logout, showDetail
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -28,6 +28,6 @@ urlpatterns = [
     url(r'^logout/$', do_logout),
     url(r'^info/$', info),
     url(r'^showDetail/', showDetail),
-    url(r'^adduser/', adduser1),
+    url(r'^adduser/', adduser),
     url(r'^$', do_login),
 ]
