@@ -144,7 +144,7 @@ class ViewInfo(models.Model):
     create_day = models.CharField(max_length=50, verbose_name='创建日期', default=getFormedDateStr())
     create_time = models.CharField(max_length=50, verbose_name='创建时间',
                                    default=datetime.datetime.now().strftime("%H:%M:%S"))
-    pub_content = models.TextField(max_length=500, verbose_name='回复内容')
+    pub_content = models.TextField(max_length=500, verbose_name='发布内容')
 
 
     def __str__(self):

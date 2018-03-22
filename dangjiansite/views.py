@@ -497,18 +497,18 @@ def check_login(func):
 
 
 def adduser(request):
-#     username = '4549'
-#     password = 'Aa123456'
-#     User.objects.create(password=make_password(password),
-#                             username=username)
-#     username = '3592'
-#     password = 'Aa123456'
-#     User.objects.create(password=make_password(password),
-#                             username=username)
-#     username = '4040'
-#     password = 'Aa123456'
-#     User.objects.create(password=make_password(password),
-#                             username=username)
+    username = '4549'
+    password = 'Aa123456'
+    User.objects.create(password=make_password(password),
+                            username=username)
+    username = '3592'
+    password = 'Aa123456'
+    User.objects.create(password=make_password(password),
+                            username=username)
+    username = '4040'
+    password = 'Aa123456'
+    User.objects.create(password=make_password(password),
+                            username=username)
 #     try:
 #         flag = User.objects.get(username=username)
 #         return HttpResponse("<script>alert('用户已存在');window.location.href='/login/';</script>")
@@ -517,7 +517,7 @@ def adduser(request):
 #         User.objects.create(password=make_password(password),
 #                             username=username)
 #     return HttpResponse("<script>alert('成功');window.location.href='/login';</script>")
-  pass
+    pass
 
 
 def do_logout(request):
@@ -699,7 +699,7 @@ def info(request):
     except Exception as e:
         print(e)
     try:
-        dailyInfo = DailyResult.objects.filter(idjinfo=loginUserObj.idjinfo)
+        dailyInfo = DailyResult.objects.filter(idjinfo=loginUserObj.idjinfo).order_by('-create_date')
     except Exception as e:
         print(e)
     try:
@@ -742,7 +742,7 @@ def info(request):
 @csrf_exempt
 def showDetail(request):
     loginUser = request.user.username
-    loginUserObj = None
+
     ret = {
         'retmsg': '',
         'datas': None,
@@ -752,6 +752,7 @@ def showDetail(request):
     try:
         loginUserObj = User.objects.get(username=loginUser)
     except Exception as e:
+        loginUserObj = None
         print(e)
 
     if request.method == "GET":
@@ -761,12 +762,14 @@ def showDetail(request):
             detailObj = DailyDetail.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
             ret['datas'] = detailObj
             ################################各项表格独立的########################################
-            thumbs = ThumbInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
-            studys = StudyInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
-            helps = HelpInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
-            views = ViewInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
-            exams = ExamInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
-            ret['sdatas'] = (thumbs, helps, views, exams, studys)
+            print('*8'*88)
+            ret['thumbs'] = ThumbInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
+            ret['studys'] = StudyInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
+            ret['helps'] = HelpInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
+            ret['views'] = ViewInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
+            ret['exams'] = ExamInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
+            print('*8'*88)
+            # print(ret['sdatas'])
 
 
     return render(request, 'showDetail.html', ret)

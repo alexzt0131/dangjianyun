@@ -355,15 +355,6 @@ def thumbTen(userobj, run):
         print('无需点赞操作')
 
 #####################################################################################################
-#从djinfo中便利出来的username
-# for i in djusers:
-#     print(i.iuser)
-
-
-
-
-
-
 
 
 def main(userobj):
@@ -453,131 +444,8 @@ def main(userobj):
 
 
 
-
-
-
-
-
-
-
-
-######################################backup#############################################################
-#已完成
-# def study(userobj, run):
-#     '''
-#     判断执行次数操作，并将结果写入文件
-#     :param run:
-#     :return:
-#     '''
-#     studyTimes = run.getExcuteTimes()['study']
-#     current1 = checkScore(run)['study1'].split('/')[0]
-#     total1 = checkScore(run)['study1'].split('/')[1]
-#     current2 = checkScore(run)['study2'].split('/')[0]
-#     total2 = checkScore(run)['study2'].split('/')[1]
-#
-#
-#
-#
-#     # if current1 == total1 and current2 == total2:
-#     if current1 == total1 and current2 == total2:
-#         print('无需学习操作')
-#         studyTimes = 0  # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-#     for i in range(studyTimes):
-#         print('还有{}个页面可选。'.format(len(run.studyPages)))
-#         print('debug out put.', run.studyPages)
-#         mid = random.choice(run.studyPages)
-#         # 记录访问的标题与id
-#         for i in run.studyPageList:
-#             if mid == i[1]:
-#                 run.studyRsults.update({'title': i[0]})
-#         run.doStudy(mid=mid)
-#     # 写入当日result文件
-#     if run.studyRsults:
-#         result = "{} 学习主题: {}\n回复内容：\n{}\n".format(run.getCurrentTime(), run.studyRsults['title'], run.studyRsults['content'])
-#         print(result)
-#         dobj = getDailyDetailObj(userobj)
-#         try:
-#             dobj.study1Detail += '{}<br/>'.format(result)
-#         except Exception as e:
-#             dobj.study1Detail = ''
-#             pass
-#         text = dobj.study1Detail
-#         pat = r'<br/>'
-#         s = re.compile(pat).sub('', text)
-#         dobj.study1Detail = s
-#         dobj.save()
-#         write2File(run, './results/', 'result.txt', result)
-#已完成自循环 独立表
-# def exam(userobj, run):
-#     examTimes = run.getExcuteTimes()['exam']
-#     # current = checkScore(run)['exam'].split('/')[0]
-#     # total = checkScore(run)['exam'].split('/')[1]
-#     # print(current, total)
-#     # print(examTimes)
-#     # if current == total:
-#     #     print('无需做题操作')
-#     #     examTimes = 1  # <<<
-#     for i in range(1):
-#     # while examTimes > 0:
-#         run.doExam()  #
-#         #将结果写入数据库
-#         examDetail = run.examC19Info
-#         ExamDetail.objects.all().delete()
-#         ExamDetail.objects.create(
-#             idjinfo=userobj.idjinfo,
-#             subjectId=examDetail[0]['id'],
-#             title=examDetail[0]['title'],
-#             detail=examDetail[0]['detail'],
-#
-#         )
-#         examInfo = run.qaList
-#         for i in examInfo:
-#
-#             if len(ExamInfo.objects.filter(create_day=getFormedDateStr())) >= 20:
-#                 break
-#             else:
-#                 # print('*'*88)
-#                 # print(i['answerText'])
-#                 question = Qa.objects.get(answerText=i['answerText']).question
-#                 ExamInfo.objects.create(
-#                     idjinfo=userobj.idjinfo,
-#                     question=question,
-#                     answer=i['answer'],
-#                     answerText=i['answerText']).save()
-#         examTimes = run.getExcuteTimes()['exam']
-#         time.sleep(2)
-#     else:
-#         print('无需做题操作')
-##################################################################################################################
-
-
-
-
 if __name__ == "__main__":
-    date = getFormedDateStr()
-    loginUserObj = userobj
-    thumbs = ThumbInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
-    studys = StudyInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
-    helps = HelpInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
-    views = ViewInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
-    exams = ExamInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
-
-    for i in a:
-        print(i)
-    print("*"*88)
-    for i in b:
-        print(i)
-    print("*"*88)
-    for i in c:
-        print(i)
-    print("*"*88)
-    for i in d:
-        print(i)
-    print("*"*88)
-    for i in e:
-        print(i)
-    print("*"*88)
-    # main(userobj)
+    main(userobj)
     # print(datetime.datetime.now().strftime("%H:%M:%S"))
     pass
 

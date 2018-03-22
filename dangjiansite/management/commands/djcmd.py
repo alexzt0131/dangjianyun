@@ -21,7 +21,11 @@ from dangjiansite.views import checkScore
 
 # getDailyDetailObj 重写次函数 不要request参数实现
 
-djusers = [i for i in DjInfo.objects.all()]
+# djusers = [i for i in DjInfo.objects.all()]
+#
+#
+# for i in djusers:
+#     print(i)
 # userobj = djusers[1].iuser
 # print(userobj)
 # run = Runner(username=userobj.idjinfo.djusername, password=decodeStr(userobj.idjinfo.djpasswd))
@@ -69,7 +73,7 @@ def isFinish(userobj, run):
             return False
     return True
 
-#已完成自循环
+#已完成自循环 独立完成信息表
 def exam(userobj, run):
     examTimes = run.getExcuteTimes()['exam']
     # current = checkScore(run)['exam'].split('/')[0]
@@ -79,7 +83,7 @@ def exam(userobj, run):
     # if current == total:
     #     print('无需做题操作')
     #     examTimes = 1  # <<<
-    # for i in range(1):#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    # for i in range(2):#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     while examTimes > 0:#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         run.doExam()  #
         #将结果写入数据库
@@ -107,19 +111,19 @@ def exam(userobj, run):
             s = re.compile(pat).sub('', text)
             dobj.examDetail = s
             dobj.save()
-            # for i in examInfo:
-            #
-            #     if len(ExamInfo.objects.filter(create_day=getFormedDateStr())) >= 20:
-            #         break
-            #     else:
-            #         # print('*'*88)
-            #         # print(i['answerText'])
-            #         question = Qa.objects.get(answerText=i['answerText']).question
-            #         ExamInfo.objects.create(
-            #             idjinfo=userobj.idjinfo,
-            #             question=question,
-            #             answer=i['answer'],
-            #             answerText=i['answerText']).save()
+            for i in examInfo:
+
+                if len(ExamInfo.objects.filter(create_day=getFormedDateStr())) >= 20:
+                    break
+                else:
+                    # print('*'*88)
+                    # print(i['answerText'])
+                    question = Qa.objects.get(answerText=i['answerText']).question
+                    ExamInfo.objects.create(
+                        idjinfo=userobj.idjinfo,
+                        question=question,
+                        answer=i['answer'],
+                        answerText=i['answerText']).save()
             examTimes = run.getExcuteTimes()['exam']
             time.sleep(2)
     else:
@@ -146,7 +150,7 @@ def getDailyDetailObj(userobj):
     else:
         return dobj[0]
 
-#已完成自循环
+#已完成自循环独立完成信息表
 def help(userobj, run):
     '''
     互助模块
@@ -161,14 +165,23 @@ def help(userobj, run):
     # if current == total:
     #     print('无需互助操作')
     #     helpTimes = 0
-    # for i in range(helpTimes):
+    # for i in range(2):
     while helpTimes > 0:
         print('还有{}个页面可选。'.format(len(run.helpPages)))
         print('debug out put.', run.helpPages)
         print('已经互助{}个'.format(len(run.helpedPages)))
         id = random.choice(run.helpPages)
         if id not in run.helpedPages:
-            detail, log = run.doHelp(id=id)  # log暂时不知用不用
+            detail, log, helpInfo = run.doHelp(id=id)  # log暂时不知用不用
+
+            ##############记录到单独表中###############
+
+            HelpInfo.objects.create(
+                idjinfo=userobj.idjinfo,
+                title=helpInfo['title'],
+                reply=helpInfo['reply'],
+            ).save()
+            ###############结果集合中##############
 
             dobj = getDailyDetailObj(userobj)
             try:
@@ -185,7 +198,8 @@ def help(userobj, run):
         time.sleep(2)
     else:
         print('无需互助操作')
-#已完成自循环
+
+#已完成自循环独立完成信息表
 def viewPublic(userobj, run):
     '''
     发布党员视野
@@ -194,8 +208,20 @@ def viewPublic(userobj, run):
     '''
     viewTimes = run.getExcuteTimes()['view']
     while viewTimes > 0:
+    # for i in range(2):#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         print('已经发布{}个'.format(len(run.viewsResults)))
-        detail = run.doView()
+        detail, publicContent = run.doView()
+
+        ##############记录到单独表中###############
+
+        ViewInfo.objects.create(
+            idjinfo=userobj.idjinfo,
+            pub_content=publicContent,
+        ).save()
+
+        ##############记录到集体表中################
+
+
         dobj = getDailyDetailObj(userobj)
         try:
             dobj.viewDetail += '{}<br/>'.format(detail)
@@ -212,9 +238,8 @@ def viewPublic(userobj, run):
     else:
         print('无需党员视野发布操作')
 
-
-#已完成自循环
-#尝试不要循环时间，以后获取随机取学习主题
+#已完成自循环 独立完成信息表
+#尝试不要循环时间，以后获取随机取学习主题(不循环不可行)
 def study(userobj, run):
     '''
     判断执行次数操作，并将结果写入文件
@@ -236,6 +261,19 @@ def study(userobj, run):
         if run.studyRsults:
             result = "{} 学习主题: {}\n回复内容：\n{}\n".format(run.getCurrentTime(), run.studyRsults['title'], run.studyRsults['content'])
             # print(result)
+            ##############记录到单独表中###############
+
+
+            StudyInfo.objects.create(
+                idjinfo=userobj.idjinfo,
+                title=run.studyRsults['title'],
+                reply=run.studyRsults['content'],
+            ).save()
+
+
+
+
+            ##############记录到集体表中################
             dobj = getDailyDetailObj(userobj)
             try:
                 dobj.study1Detail += '{}<br/>'.format(result)
@@ -252,7 +290,7 @@ def study(userobj, run):
     else:
         print('无需学习操作')
 
-#已完成
+#已完成独立完成信息表
 # 暂时可用，有待优化循环中的代码，再看看还有什么问题
 def thumbTen(userobj, run):
     '''
@@ -270,7 +308,7 @@ def thumbTen(userobj, run):
     thumbTimes = run.getExcuteTimes()['thumb']
 
 
-    # for i in range(2):#《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《
+    # for i in range(10):#《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《
     while thumbTimes > 0:
         print('还有{}个页面可选。'.format(len(run.thumbPages)))
         print('debug out put.', run.thumbPages)
@@ -282,12 +320,25 @@ def thumbTen(userobj, run):
         thumbedSet.extend(run.thumbedFileList)
         thumbedId = [i.thumbId for i in ThumbLog.objects.filter(idjinfo=loginUserObj.idjinfo)]  # 数据多了会造成负担，需要想办法不要每次循环都这么做
         if id not in thumbedSet and id not in thumbedId:
-            detail = run.doThumb(id=id)
+            detail, thumbInfo = run.doThumb(id=id)
+            ###############记录点过的###############
             ThumbLog.objects.create(
                 idjinfo=loginUserObj.idjinfo,
                 thumbId=id,
             ).save()
-            time.sleep(13)
+
+            ##############记录到单独表中###############
+
+            ThumbInfo.objects.create(
+                idjinfo=userobj.idjinfo,
+                title=thumbInfo['title'],
+                reply=thumbInfo['reply'],
+            ).save()
+
+            ##############记录到集体表中################
+
+
+
             dobj = getDailyDetailObj(userobj)
             try:
                 dobj.thumbDetail += '{}<br/>'.format(detail)
@@ -300,22 +351,13 @@ def thumbTen(userobj, run):
             dobj.thumbDetail = s
             dobj.save()
             thumbTimes = run.getExcuteTimes()['thumb']
-            time.sleep(2)
+            time.sleep(13)
         else:
             print('id {} 已经赞过。'.format(id))
     else:
         print('无需点赞操作')
 
 #####################################################################################################
-#从djinfo中便利出来的username
-# for i in djusers:
-#     print(i.iuser)
-
-
-
-
-
-
 
 
 def main(userobj):
@@ -413,18 +455,17 @@ def main(userobj):
 
 
 
-
 ###########################Django Command#################################################
 
 from django.core.management.base import BaseCommand
 
 class Command(BaseCommand): # 继承BaseCommand类，类名请保证为Command
     def handle(self, *args, **options): # 重写handle方法，该方法写入自定义命令要做的事（逻辑代码）
-        print("hello word")
-        for i in djusers:
-            print(i.iuser)
-            main(userobj=i.iuser)
 
+        djusers = [i for i in DjInfo.objects.all()]
+        for i in djusers:
+            if i.iuser:
+                main(i.iuser)
 
 
 

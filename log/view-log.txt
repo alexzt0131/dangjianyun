@@ -1,0 +1,93 @@
+2018-03-22 20:05:45,974 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-22 20:39:50,416 - exception.py[line:135] - ERROR: Internal Server Error: /showDetail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 507, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/views.py", line 783, in showDetail
+    return render(request, 'showDetail.html', ret)
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 509, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 571, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 52: 'endfor'. Did you forget to register or load this tag?
+2018-03-22 20:39:51,691 - exception.py[line:135] - ERROR: Internal Server Error: /showDetail/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 507, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/views.py", line 783, in showDetail
+    return render(request, 'showDetail.html', ret)
+  File "/usr/local/lib/python3.5/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loader.py", line 21, in get_template
+    return engine.get_template(template_name)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/backends/django.py", line 39, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 162, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/engine.py", line 136, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 230, in compile_nodelist
+    return parser.parse()
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 509, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/local/lib/python3.5/dist-packages/django/template/base.py", line 571, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 52: 'endfor'. Did you forget to register or load this tag?
+2018-03-22 21:34:12,869 - base.py[line:152] - WARNING: Not Found: /adduser/
+2018-03-22 21:34:57,246 - exception.py[line:135] - ERROR: Internal Server Error: /adduser/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view dangjiansite.views.adduser didn't return an HttpResponse object. It returned None instead.

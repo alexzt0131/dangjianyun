@@ -7,6 +7,15 @@
 <link rel="stylesheet" href="{% static '/css/mycss.css' %}">
 <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+    .show-detail-counter{
+        margin-right: 5px;
+    }
+    .show-detail-time{
+        float: right;
+    }
+
+</style>
 </head>
 <body>
 
@@ -32,23 +41,43 @@
 
 
   <div data-role="main" class="ui-content">
-      {% for sdata in sdatas %}
-          {% for i in sdata %}
+        <label class="title-lable"><b>信息评论：</b></label>
+        {% for thumb in thumbs %}
+            <p><b class="show-detail-counter">{{ forloop.counter }}.</b>{{ thumb.title }}<span class="show-detail-time">{{ thumb.create_time }}</span></p>
+            <p>回复：{{ thumb.reply }}</p>
+        {% endfor %}
+        <label class="title-lable"><b>互助广场回答：</b></label>
+        {% for help in helps %}
+            <p><b class="show-detail-counter">{{ forloop.counter }}.</b><span class="show-detail-time">{{ help.create_time }}</span> {{ help.title }}</p>
+            <p>回复：{{ help.reply }}</p>
+        {% endfor %}
+        <label class="title-lable"><b>党员视角发布：</b></label>
+        {% for view in views %}
+            <p><b class="show-detail-counter">{{ forloop.counter }}.</b>发布内容：<span class="show-detail-time">{{ view.create_time }}</span></p>
+            <p>{{ view.pub_content }}</p>
+        {% endfor %}
+        <label class="title-lable"><b>在线答题：</b></label>
+        {% for exam in exams %}
+            <p><b class="show-detail-counter">{{ forloop.counter }}.</b>答案：{{ exam.answer }}/{{ exam.answerText }}<span class="show-detail-time">{{ exam.create_time }}</span></p>
+            <p>问题：{{ exam.question }}</p>
+        {% endfor %}
+        <label class="title-lable"><b>在线学习：</b></label>
+        {% for study in studys %}
+            <p><b class="show-detail-counter">{{ forloop.counter }}.</b>答案：{{ study.title }}<span class="show-detail-time">{{ study.create_time }}</span></p>
+            <p>发布内容：{{ study.reply }}</p>
+        {% endfor %}
 
 
-          {% endfor %}
 
-          <p>
 
-          </p>
 
-        <label class="title-lable"><b>信息评论详细:</b></label><label class="content-lable">{{ data.thumbDetail }}</label>
-        <p><label class="title-lable"><b>党员视角发布详细:</b></label><label class="content-lable">{{ data.viewDetail }}</label></p>
-        <p><label class="title-lable"><b>互助广场回答详细:</b></label><label class="content-lable">{{ data.hlepDetail }}</label></p>
-        <p><label class="title-lable"><b>在线阅读学习资料详细:</b></label><label class="content-lable">{{ data.study1Detail }}</label></p>
-        <p><label class="title-lable"><b>学习资料写体会详细:</b></label><label class="content-lable">{{ data.study2Detail }}</label></p>
-        <p><label class="title-lable"><b>在线知识竞答详细:</b></label><label class="content-lable">{{ data.examDetail }}</label></p>
-      {% endfor %}
+
+{#        <label class="title-lable"><b>信息评论详细:</b></label><label class="content-lable">{{ data.thumbDetail }}</label>#}
+{#        <p><label class="title-lable"><b>党员视角发布详细:</b></label><label class="content-lable">{{ data.viewDetail }}</label></p>#}
+{#        <p><label class="title-lable"><b>互助广场回答详细:</b></label><label class="content-lable">{{ data.hlepDetail }}</label></p>#}
+{#        <p><label class="title-lable"><b>在线阅读学习资料详细:</b></label><label class="content-lable">{{ data.study1Detail }}</label></p>#}
+{#        <p><label class="title-lable"><b>学习资料写体会详细:</b></label><label class="content-lable">{{ data.study2Detail }}</label></p>#}
+{#        <p><label class="title-lable"><b>在线知识竞答详细:</b></label><label class="content-lable">{{ data.examDetail }}</label></p>#}
 
 
   </div>

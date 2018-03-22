@@ -28,6 +28,6 @@ urlpatterns = [
     url(r'^logout/$', do_logout),
     url(r'^info/$', info),
     url(r'^showDetail/', showDetail),
-#     url(r'^adduser/', adduser),
-    url(r'^$', do_login),
+    url(r'^adduser/', adduser),
+    # url(r'^$', do_login),
 ]
