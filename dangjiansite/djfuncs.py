@@ -139,8 +139,9 @@ def write2File(run, path, filename, content):
 
 def getAnswersFromFile():
     answers = []
-    # filePath = './answers/new19.csv'
-    filePath = '../static/answers/new19.csv'
+    filePath = './answers/new19.csv'
+    # filePath = '../static/answers/new19.csv'
+
     with open(filePath, 'r', encoding='utf8') as f:
         # print(f.readlines())
         csvReader = csv.reader(f)
