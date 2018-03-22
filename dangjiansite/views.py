@@ -496,18 +496,18 @@ def check_login(func):
 
 
 def adduser(request):
-    username = '4549'
-    password = 'Aa123456'
-    User.objects.create(password=make_password(password),
-                            username=username)
-    username = '3592'
-    password = 'Aa123456'
-    User.objects.create(password=make_password(password),
-                            username=username)
-    username = '4040'
-    password = 'Aa123456'
-    User.objects.create(password=make_password(password),
-                            username=username)
+#     username = '4549'
+#     password = 'Aa123456'
+#     User.objects.create(password=make_password(password),
+#                             username=username)
+#     username = '3592'
+#     password = 'Aa123456'
+#     User.objects.create(password=make_password(password),
+#                             username=username)
+#     username = '4040'
+#     password = 'Aa123456'
+#     User.objects.create(password=make_password(password),
+#                             username=username)
 #     try:
 #         flag = User.objects.get(username=username)
 #         return HttpResponse("<script>alert('用户已存在');window.location.href='/login/';</script>")
