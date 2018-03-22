@@ -516,6 +516,7 @@ def adduser(request):
 #         User.objects.create(password=make_password(password),
 #                             username=username)
 #     return HttpResponse("<script>alert('成功');window.location.href='/login';</script>")
+  pass
 
 
 def do_logout(request):
