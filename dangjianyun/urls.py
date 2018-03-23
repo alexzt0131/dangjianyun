@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from dangjiansite.views import adduser, do_login, info, index, config, functions, do_logout, showDetail
 from dangjianyun import settings 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^search/', admin.site.urls),
     url(r'^login/$', do_login),
     url(r'^index/$', index),
     url(r'^config/$', config),
@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^logout/$', do_logout),
     url(r'^info/$', info),
     url(r'^showDetail/', showDetail),
-    url(r'^adduser/', adduser),
+#     url(r'^adduser/', adduser),
     # url(r'^$', do_login),
 ]
 from django.conf import settings 
