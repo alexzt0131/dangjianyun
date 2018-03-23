@@ -265,3 +265,4 @@ ValueError: The view dangjiansite.views.adduser didn't return an HttpResponse ob
 2018-03-23 23:28:30,952 - base.py[line:152] - WARNING: Not Found: /static/css/mycss.css
 2018-03-23 23:28:36,633 - base.py[line:152] - WARNING: Not Found: /static/css/mycss.css
 2018-03-23 23:31:31,977 - base.py[line:152] - WARNING: Not Found: /static/css/mycss.css
+2018-03-24 00:03:09,873 - base.py[line:152] - WARNING: Not Found: /static/css/mycss.css
