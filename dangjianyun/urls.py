@@ -18,7 +18,7 @@ from django.contrib import admin
 
 
 from dangjiansite.views import adduser, do_login, info, index, config, functions, do_logout, showDetail
-
+from dangjianyun import settings 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/$', do_login),
@@ -30,7 +30,7 @@ urlpatterns = [
     url(r'^showDetail/', showDetail),
     url(r'^adduser/', adduser),
     # url(r'^$', do_login),
-]
+] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT) 
 # from django.conf import settings 
 # if settings.DEBUG is False:
 #     urlpatterns += patterns('',
