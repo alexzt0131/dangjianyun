@@ -129,10 +129,10 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/root/www/dangjianyun/static/'
+STATIC_ROOT = '/root/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/root/www/static/',
+    '/root/static/',
 ]
 
 
