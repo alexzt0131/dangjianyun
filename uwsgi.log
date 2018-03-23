@@ -142,3 +142,59 @@ Not Found: /
 [pid: 1612|app: 0|req: 6/6] 117.61.131.139 () {42 vars in 796 bytes} [Fri Mar 23 14:03:51 2018] GET / => generated 2794 bytes in 3 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
 [pid: 1612|app: 0|req: 7/7] 117.61.131.139 () {42 vars in 806 bytes} [Fri Mar 23 14:03:58 2018] GET /admin => generated 0 bytes in 0 msecs (HTTP/1.1 301) 3 headers in 112 bytes (1 switches on core 1)
 [pid: 1613|app: 0|req: 1/8] 117.61.131.139 () {42 vars in 808 bytes} [Fri Mar 23 14:03:58 2018] GET /admin/ => generated 8197 bytes in 294 msecs (HTTP/1.1 200) 6 headers in 227 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Mar 23 21:33:09 2018] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-16) on 23 March 2018 05:21:30
+os: Linux-3.10.0-693.el7.x86_64 #1 SMP Tue Aug 22 21:09:27 UTC 2017
+nodename: VM_0_11_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/www/dangjianyun
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/www/dangjianyun
+your processes number limit is 3895
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.3 (default, Mar 23 2018, 12:54:40)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+Python main interpreter initialized at 0x2162980
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 250128 bytes (244 KB) for 4 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2162980 pid: 16790 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 16790)
+spawned uWSGI worker 1 (pid: 16843, cores: 2)
+spawned uWSGI worker 2 (pid: 16844, cores: 2)
+[pid: 16843|app: 0|req: 1/1] 118.29.249.61 () {44 vars in 794 bytes} [Fri Mar 23 21:33:12 2018] GET /login/ => generated 1343 bytes in 210 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 16843|app: 0|req: 2/2] 118.29.249.61 () {44 vars in 791 bytes} [Fri Mar 23 21:33:12 2018] GET /static/css/mycss.css => generated 404 bytes in 2 msecs via sendfile() (HTTP/1.1 200) 4 headers in 139 bytes (0 switches on core 1)
+[pid: 16843|app: 0|req: 3/3] 118.29.249.61 () {44 vars in 778 bytes} [Fri Mar 23 21:33:12 2018] GET /static/image/test.jpg => generated 87485 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 4 headers in 143 bytes (0 switches on core 1)
+[pid: 16843|app: 0|req: 4/4] 118.29.249.61 () {44 vars in 794 bytes} [Fri Mar 23 21:33:15 2018] GET /login/ => generated 1343 bytes in 6 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 16844|app: 0|req: 1/5] 118.29.249.61 () {46 vars in 846 bytes} [Fri Mar 23 21:33:15 2018] GET /static/css/mycss.css => generated 0 bytes in 88 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 0)
+[pid: 16843|app: 0|req: 5/6] 118.29.249.61 () {46 vars in 833 bytes} [Fri Mar 23 21:33:15 2018] GET /static/image/test.jpg => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 1)
+[pid: 16843|app: 0|req: 6/7] 118.29.249.61 () {44 vars in 794 bytes} [Fri Mar 23 21:33:15 2018] GET /login/ => generated 1343 bytes in 5 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 16843|app: 0|req: 7/8] 118.29.249.61 () {46 vars in 846 bytes} [Fri Mar 23 21:33:16 2018] GET /static/css/mycss.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 1)
+[pid: 16843|app: 0|req: 8/9] 118.29.249.61 () {46 vars in 833 bytes} [Fri Mar 23 21:33:16 2018] GET /static/image/test.jpg => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 1)
+[pid: 16843|app: 0|req: 9/10] 118.29.249.61 () {44 vars in 794 bytes} [Fri Mar 23 21:33:16 2018] GET /login/ => generated 1343 bytes in 6 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 16844|app: 0|req: 2/11] 118.29.249.61 () {46 vars in 846 bytes} [Fri Mar 23 21:33:16 2018] GET /static/css/mycss.css => generated 0 bytes in 1 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 1)
+[pid: 16844|app: 0|req: 3/12] 118.29.249.61 () {46 vars in 833 bytes} [Fri Mar 23 21:33:17 2018] GET /static/image/test.jpg => generated 0 bytes in 0 msecs (HTTP/1.1 304) 2 headers in 77 bytes (0 switches on core 1)
+[pid: 16843|app: 0|req: 10/13] 118.29.249.61 () {42 vars in 763 bytes} [Fri Mar 23 21:33:21 2018] GET /admin/ => generated 0 bytes in 42 msecs (HTTP/1.1 302) 7 headers in 265 bytes (1 switches on core 1)
+[pid: 16844|app: 0|req: 4/14] 118.29.249.61 () {42 vars in 800 bytes} [Fri Mar 23 21:33:21 2018] GET /admin/login/?next=/admin/ => generated 1654 bytes in 168 msecs (HTTP/1.1 200) 7 headers in 381 bytes (1 switches on core 1)
+[pid: 16843|app: 0|req: 11/15] 118.29.249.61 () {42 vars in 789 bytes} [Fri Mar 23 21:33:21 2018] GET /static/admin/css/base.css => generated 16066 bytes in 1 msecs via sendfile() (HTTP/1.1 200) 4 headers in 141 bytes (0 switches on core 0)
+[pid: 16843|app: 0|req: 12/16] 118.29.249.61 () {42 vars in 791 bytes} [Fri Mar 23 21:33:21 2018] GET /static/admin/css/login.css => generated 1203 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 4 headers in 140 bytes (0 switches on core 0)
+[pid: 16843|app: 0|req: 13/17] 118.29.249.61 () {42 vars in 791 bytes} [Fri Mar 23 21:33:21 2018] GET /static/admin/css/fonts.css => generated 423 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 4 headers in 139 bytes (0 switches on core 0)
+[pid: 16843|app: 0|req: 14/18] 118.29.249.61 () {42 vars in 880 bytes} [Fri Mar 23 21:33:21 2018] GET /static/admin/fonts/Roboto-Regular-webfont.woff => generated 80304 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 4 headers in 157 bytes (0 switches on core 0)
+[pid: 16843|app: 0|req: 15/19] 118.29.249.61 () {42 vars in 876 bytes} [Fri Mar 23 21:33:21 2018] GET /static/admin/fonts/Roboto-Light-webfont.woff => generated 81348 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 4 headers in 157 bytes (0 switches on core 0)
