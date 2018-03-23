@@ -198,3 +198,44 @@ spawned uWSGI worker 2 (pid: 16844, cores: 2)
 [pid: 16843|app: 0|req: 13/17] 118.29.249.61 () {42 vars in 791 bytes} [Fri Mar 23 21:33:21 2018] GET /static/admin/css/fonts.css => generated 423 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 4 headers in 139 bytes (0 switches on core 0)
 [pid: 16843|app: 0|req: 14/18] 118.29.249.61 () {42 vars in 880 bytes} [Fri Mar 23 21:33:21 2018] GET /static/admin/fonts/Roboto-Regular-webfont.woff => generated 80304 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 4 headers in 157 bytes (0 switches on core 0)
 [pid: 16843|app: 0|req: 15/19] 118.29.249.61 () {42 vars in 876 bytes} [Fri Mar 23 21:33:21 2018] GET /static/admin/fonts/Roboto-Light-webfont.woff => generated 81348 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 4 headers in 157 bytes (0 switches on core 0)
+*** Starting uWSGI 2.0.17 (64bit) on [Fri Mar 23 22:22:04 2018] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-16) on 23 March 2018 05:21:30
+os: Linux-3.10.0-693.el7.x86_64 #1 SMP Tue Aug 22 21:09:27 UTC 2017
+nodename: VM_0_11_centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /root/www/dangjianyun
+detected binary path: /usr/local/python3/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/www/dangjianyun
+your processes number limit is 3895
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.3 (default, Mar 23 2018, 12:54:40)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-16)]
+Python main interpreter initialized at 0x29fb980
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 250128 bytes (244 KB) for 4 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x29fb980 pid: 14318 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 14318)
+spawned uWSGI worker 1 (pid: 14341, cores: 2)
+spawned uWSGI worker 2 (pid: 14342, cores: 2)
+[pid: 14341|app: 0|req: 1/1] 111.30.242.5 () {44 vars in 793 bytes} [Fri Mar 23 22:24:03 2018] GET /login/ => generated 1437 bytes in 211 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+[pid: 14341|app: 0|req: 2/2] 111.30.242.5 () {44 vars in 793 bytes} [Fri Mar 23 22:26:44 2018] GET /login/ => generated 1437 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 1)
+[pid: 14341|app: 0|req: 3/3] 111.30.242.5 () {42 vars in 762 bytes} [Fri Mar 23 22:26:51 2018] GET /admin/ => generated 0 bytes in 46 msecs (HTTP/1.1 302) 7 headers in 265 bytes (1 switches on core 1)
+[pid: 14341|app: 0|req: 4/4] 111.30.242.5 () {42 vars in 799 bytes} [Fri Mar 23 22:26:51 2018] GET /admin/login/?next=/admin/ => generated 1654 bytes in 125 msecs (HTTP/1.1 200) 7 headers in 381 bytes (1 switches on core 0)
