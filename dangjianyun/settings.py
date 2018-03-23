@@ -128,15 +128,11 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
-STATIC_ROOT = '/root/www/static'
-STATIC_FOR_VIEW = ''
-
-
-if not DEBUG:
-    STATIC_FOR_VIEW = '/root/www/static'
-else:
-    STATIC_FOR_VIEW = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder"
+)
 
 
 
