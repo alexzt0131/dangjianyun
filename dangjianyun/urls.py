@@ -31,10 +31,15 @@ urlpatterns = [
     url(r'^showDetail/', showDetail),
     url(r'^adduser/', adduser),
     # url(r'^$', do_login),
-] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT) 
-# from django.conf import settings 
+]
+from django.conf import settings 
 # if settings.DEBUG is False:
 #     urlpatterns += patterns('',
 #         url(r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.STATIC_ROOT,
 #         }),
 #     )
+if settings.DEBUG:    
+    urlpatterns += patterns('',
+ url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
+ {'document_root': os.path.join(settings.SITE_ROOT,'media')},name="media"),
+    )
