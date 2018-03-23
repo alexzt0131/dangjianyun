@@ -29,7 +29,7 @@ urlpatterns = [
     url(r'^logout/$', do_logout),
     url(r'^info/$', info),
     url(r'^showDetail/', showDetail),
-#     url(r'^adduser/', adduser),
+    # url(r'^adduser/', adduser),
     # url(r'^$', do_login),
 ]
 from django.conf import settings 

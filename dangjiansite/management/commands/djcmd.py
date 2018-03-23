@@ -168,7 +168,7 @@ def help(userobj, run):
     # for i in range(2):
     while helpTimes > 0:
         print('还有{}个页面可选。'.format(len(run.helpPages)))
-        print('debug out put.', run.helpPages)
+        # print('debug out put.', run.helpPages)
         print('已经互助{}个'.format(len(run.helpedPages)))
         id = random.choice(run.helpPages)
         if id not in run.helpedPages:
@@ -250,7 +250,7 @@ def study(userobj, run):
     while studyTimes > 0:
     # for i in range(1):#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         print('还有{}个页面可选。'.format(len(run.studyPages)))
-        print('debug out put.', run.studyPages)
+        # print('debug out put.', run.studyPages)
         mid = random.choice(run.studyPages)
         # 记录访问的标题与id
         for i in run.studyPageList:
@@ -311,7 +311,7 @@ def thumbTen(userobj, run):
     # for i in range(10):#《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《
     while thumbTimes > 0:
         print('还有{}个页面可选。'.format(len(run.thumbPages)))
-        print('debug out put.', run.thumbPages)
+        # print('debug out put.', run.thumbPages)
         print('已经点赞{}个'.format(len(run.thumbedPages) + 1))
         id = random.choice(run.thumbPages)
         thumbedSet = []
@@ -351,7 +351,7 @@ def thumbTen(userobj, run):
             dobj.thumbDetail = s
             dobj.save()
             thumbTimes = run.getExcuteTimes()['thumb']
-            time.sleep(13)
+            time.sleep(15)
         else:
             print('id {} 已经赞过。'.format(id))
     else:
@@ -436,6 +436,9 @@ def main(userobj):
         else:
             print('*'*88)
             print('有未完成项目，重启main函数。')
+            scores = checkScore(run)
+            for k, v in scores.items():
+                print('{}:{}'.format(k, v))
             main(userobj)
     except Exception as e:
         print(e)
@@ -464,6 +467,9 @@ class Command(BaseCommand): # 继承BaseCommand类，类名请保证为Command
 
         djusers = [i for i in DjInfo.objects.all()]
         for i in djusers:
+            print('*'*88)
+            print('开始启动 {}'.format(i.djusername))
+            print('*'*88)
             if i.iuser:
                 main(i.iuser)
 

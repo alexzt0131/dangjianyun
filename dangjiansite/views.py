@@ -709,9 +709,9 @@ def info(request):
 
     # print(dailyInfo)
     # print(type(dailyInfo))
-    print(dailyDetail)
-    print('8'*88)
-    print(dailyInfo)
+    # print(dailyDetail)
+    # print('8'*88)
+    # print(dailyInfo)
     '''
     次函数应该是反映当天完成的情况记录，应该从数据库中先看有无数据
     :param request:
@@ -721,12 +721,12 @@ def info(request):
     try:
         username = loginUserObj.idjinfo.djusername
         passwd = decodeStr(loginUserObj.idjinfo.djpasswd)
-        print('*' * 88)
-        print(username, passwd)
+        # print('*' * 88)
+        # print(username, passwd)
         run = Runner(username=username, password=passwd)
         userInfo = run.getCredItinfoToday()
         scores = run.getCredItinfo()
-        print(scores)
+        # print(scores)
         ret['scores'] = scores[1]
         ret['userinfo'] = userInfo
         ret['dailyInfo'] = dailyInfo
@@ -762,13 +762,13 @@ def showDetail(request):
             detailObj = DailyDetail.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
             ret['datas'] = detailObj
             ################################各项表格独立的########################################
-            print('*8'*88)
+            # print('*8'*88)
             ret['thumbs'] = ThumbInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
             ret['studys'] = StudyInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
             ret['helps'] = HelpInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
             ret['views'] = ViewInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
             ret['exams'] = ExamInfo.objects.filter(create_day=date).filter(idjinfo=loginUserObj.idjinfo)
-            print('*8'*88)
+            # print('*8'*88)
             # print(ret['sdatas'])
 
 
