@@ -91,3 +91,7 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 198, in _get_response
     "returned None instead." % (callback.__module__, view_name)
 ValueError: The view dangjiansite.views.adduser didn't return an HttpResponse object. It returned None instead.
+2018-03-23 13:17:50,870 - base.py[line:152] - WARNING: Not Found: /
+2018-03-23 13:50:22,833 - base.py[line:152] - WARNING: Not Found: /
+2018-03-23 14:03:48,504 - base.py[line:152] - WARNING: Not Found: /l
+2018-03-23 14:03:51,051 - base.py[line:152] - WARNING: Not Found: /
