@@ -126,9 +126,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"), )
+STATIC_ROOT = '/root/www/static'
+STATIC_FOR_VIEW = ''
+
+
+if not DEBUG:
+    STATIC_FOR_VIEW = '/root/www/static'
+else:
+    STATIC_FOR_VIEW = os.path.join(BASE_DIR, "static")
+
 
 
 AUTH_USER_MODEL = 'dangjiansite.User'
