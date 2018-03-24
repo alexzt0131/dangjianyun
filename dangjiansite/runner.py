@@ -474,18 +474,17 @@ class Runner():
             log = '学习post3：{}'.format(rjson)
             self.writeLog2File(log)
             print(log)
+
         def get1():
             url = 'https://mapi.dangjianwang.com/v3_1/Study/MaterialDetail?token={}&mid={}'.format(self.token, mid)
             rjson = self.session.get(url=url)
-            # print(rjson.text)
-            content = rjson.content
-            soup = BeautifulSoup(content, 'html.parser')
+            text = rjson.content
+            soup = BeautifulSoup(text, 'html.parser')
+            retContents = []
             for div in soup.find_all('p'):
-                # print(div.text.strip())
-                content = div.text.strip()
-                if len(content) > 100:
-                    # print(content)
-                    return content
+                p = div.text.strip()
+                retContents.append(p if 100 > len(p) < 200 else p[0:200])
+            return random.choice(retContents)
 
         def recordFeeling(content=None):
             if not content:
@@ -506,9 +505,25 @@ class Runner():
             # print(rjson)
             log = '学习recordFeeling：{}'.format(rjson)
             self.writeLog2File(log)
+            print('in recordFeeling')
             print(log)
+
+            if rjson['code'] == '200':
+                return {'content': content}
+            elif rjson['code'] == '1120':
+                addtion = [
+                    '我们必须坚定不移，任何时候任何情况下都不能动摇',
+                    '人民有信心，国家才有未来，国家才有力量。',
+                    '新时代，属于自强不息、勇于创造的奋斗者。',
+                    '民主政治建设有序推进，依法治市迈出新步伐。',
+                    '一切公职人员，都必须牢记始终为人民利益和幸福而努力工作。',
+
+                ]
+                return recordFeeling(content= '{}\n{}'.format(content, random.choice(addtion)))
+            else:
+                return None
             #记录回复的心得
-            return {'content': content}
+
 
         def readTime():
             data = {
