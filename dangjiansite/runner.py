@@ -36,7 +36,7 @@ class Runner():
         self.thumbedFilePath = './lib/'.format(username)
         self.logFilePath = './log/'.format(username)
         self.errFilePath = './err/'.format(username)
-        self.thumbedFileList = self.getThumbFromFile()
+        # self.thumbedFileList = self.getThumbFromFile()
         self.debug = True
         self.session = requests.session()
         self.appid = appid#应该是本设备安装app的id 等换个设备试一下就知道了
@@ -296,6 +296,7 @@ class Runner():
         rjson = self.session.post(url=commitUrl,
                                  data=data,
                                  verify=False).json()
+        print(rjson)
         if rjson['code'] == '1003':
             self.token = self.getToken()
         elif rjson['code'] == '200':
@@ -319,7 +320,8 @@ class Runner():
 
                 return (detail, thumbInfo)
         elif rjson['code'] == '500' and rjson['msg'] == '评论过快，请求休息一会':
-            time.sleep(15)
+            print('因评论过快，等待一段时间')
+            time.sleep(18)
         else:
             print('rjson', rjson)
             self.multiThumbed.append(id)
