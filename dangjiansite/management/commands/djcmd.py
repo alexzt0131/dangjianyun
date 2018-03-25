@@ -11,7 +11,8 @@ from dangjiansite.views import getFormedDateStr, decodeStr, write2File
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dangjianyun.settings")
 django.setup()
 from dangjiansite import views
-from dangjiansite.models import ThumbLog, User, DjInfo, DailyDetail, ExamInfo, Qa, ExamDetail, ErrLog, DailyResult
+from dangjiansite.models import ThumbLog, User, DjInfo, DailyDetail, ExamInfo, Qa, ExamDetail, ErrLog, DailyResult, \
+    ThumbInfo
 from dangjiansite.views import checkScore
 
 # print(DjInfo.objects.get(djusername='024040').iuser)
