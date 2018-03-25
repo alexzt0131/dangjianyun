@@ -307,9 +307,11 @@ def thumbTen(userobj, run):
         logging.exception("msg: {}.".format(str(e)))
     thumbTimes = run.getExcuteTimes()['thumb']
 
+    print('需点赞{}次'.format(thumbTimes))
 
-    # for i in range(10):#《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《
+    # for i in range(1):#《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《
     while thumbTimes > 0:
+
         print('还有{}个页面可选。'.format(len(run.thumbPages)))
         # print('debug out put.', run.thumbPages)
         print('已经点赞{}个'.format(len(run.thumbedPages) + 1))
@@ -317,7 +319,7 @@ def thumbTen(userobj, run):
         thumbedSet = []
         thumbedSet.extend(run.thumbedPages)
         thumbedSet.extend(run.multiThumbed)
-        thumbedSet.extend(run.thumbedFileList)
+        # thumbedSet.extend(run.thumbedFileList)
         thumbedId = [i.thumbId for i in ThumbLog.objects.filter(idjinfo=loginUserObj.idjinfo)]  # 数据多了会造成负担，需要想办法不要每次循环都这么做
         if id not in thumbedSet and id not in thumbedId:
             detail, thumbInfo = run.doThumb(id=id)
@@ -443,11 +445,6 @@ def main(userobj):
     except Exception as e:
         print(e)
         logging.exception("msg: {}.".format(str(e)))
-
-
-
-
-
 
 
 

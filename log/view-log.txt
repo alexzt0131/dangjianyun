@@ -669,3 +669,108 @@ ValueError: The view dangjiansite.views.adduser didn't return an HttpResponse ob
 2018-03-24 23:11:44,597 - base.py[line:152] - WARNING: Not Found: /static/admin/js/urlify.js
 2018-03-24 23:11:44,600 - base.py[line:152] - WARNING: Not Found: /static/admin/js/prepopulate.min.js
 2018-03-24 23:11:44,603 - base.py[line:152] - WARNING: Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+2018-03-25 20:30:45,525 - djcmd.py[line:376] - ERROR: msg: 'Runner' object has no attribute 'thumbedFileList'.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 373, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 320, in thumbTen
+    thumbedSet.extend(run.thumbedFileList)
+AttributeError: 'Runner' object has no attribute 'thumbedFileList'
+2018-03-25 20:30:46,790 - djcmd.py[line:376] - ERROR: msg: 'Runner' object has no attribute 'thumbedFileList'.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 373, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 320, in thumbTen
+    thumbedSet.extend(run.thumbedFileList)
+AttributeError: 'Runner' object has no attribute 'thumbedFileList'
+2018-03-25 20:30:48,114 - djcmd.py[line:376] - ERROR: msg: 'Runner' object has no attribute 'thumbedFileList'.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 373, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 320, in thumbTen
+    thumbedSet.extend(run.thumbedFileList)
+AttributeError: 'Runner' object has no attribute 'thumbedFileList'
+2018-03-25 20:30:49,433 - djcmd.py[line:376] - ERROR: msg: 'Runner' object has no attribute 'thumbedFileList'.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 373, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 320, in thumbTen
+    thumbedSet.extend(run.thumbedFileList)
+AttributeError: 'Runner' object has no attribute 'thumbedFileList'
+2018-03-25 20:31:49,615 - djcmd.py[line:378] - ERROR: msg: name 'ThumbInfo' is not defined.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 375, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 334, in thumbTen
+    ThumbInfo.objects.create(
+NameError: name 'ThumbInfo' is not defined
+2018-03-25 20:31:51,252 - djcmd.py[line:378] - ERROR: msg: name 'ThumbInfo' is not defined.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 375, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 334, in thumbTen
+    ThumbInfo.objects.create(
+NameError: name 'ThumbInfo' is not defined
+2018-03-25 20:31:52,988 - djcmd.py[line:378] - ERROR: msg: name 'ThumbInfo' is not defined.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 375, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 334, in thumbTen
+    ThumbInfo.objects.create(
+NameError: name 'ThumbInfo' is not defined
+2018-03-25 20:34:05,194 - djcmd.py[line:378] - ERROR: msg: name 'ThumbInfo' is not defined.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 375, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 334, in thumbTen
+    ThumbInfo.objects.create(
+NameError: name 'ThumbInfo' is not defined
+2018-03-25 20:34:06,788 - djcmd.py[line:378] - ERROR: msg: name 'ThumbInfo' is not defined.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 375, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 334, in thumbTen
+    ThumbInfo.objects.create(
+NameError: name 'ThumbInfo' is not defined
+2018-03-25 20:34:08,704 - djcmd.py[line:378] - ERROR: msg: name 'ThumbInfo' is not defined.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 375, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 334, in thumbTen
+    ThumbInfo.objects.create(
+NameError: name 'ThumbInfo' is not defined
+2018-03-25 20:34:30,265 - djcmd.py[line:378] - ERROR: msg: name 'ThumbInfo' is not defined.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 375, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 334, in thumbTen
+    ThumbInfo.objects.create(
+NameError: name 'ThumbInfo' is not defined
+2018-03-25 20:34:32,114 - djcmd.py[line:378] - ERROR: msg: name 'ThumbInfo' is not defined.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 375, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 334, in thumbTen
+    ThumbInfo.objects.create(
+NameError: name 'ThumbInfo' is not defined
+2018-03-25 20:34:34,157 - djcmd.py[line:378] - ERROR: msg: name 'ThumbInfo' is not defined.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 375, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 334, in thumbTen
+    ThumbInfo.objects.create(
+NameError: name 'ThumbInfo' is not defined
+2018-03-25 20:34:35,841 - djcmd.py[line:378] - ERROR: msg: name 'ThumbInfo' is not defined.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 375, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 334, in thumbTen
+    ThumbInfo.objects.create(
+NameError: name 'ThumbInfo' is not defined
+2018-03-25 20:35:05,745 - djcmd.py[line:378] - ERROR: msg: 'NoneType' object is not iterable.
+Traceback (most recent call last):
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 375, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/home/alex/PycharmProjects/dangjianyun/dangjiansite/management/commands/djcmd.py", line 325, in thumbTen
+    detail, thumbInfo = run.doThumb(id=id)
+TypeError: 'NoneType' object is not iterable

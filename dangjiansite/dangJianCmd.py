@@ -306,8 +306,8 @@ def thumbTen(userobj, run):
 
     print('需点赞{}次'.format(thumbTimes))
 
-    # for i in range(1):#《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《
-    while thumbTimes > 0:
+    for i in range(5):#《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《《
+    # while thumbTimes > 0:
 
         print('还有{}个页面可选。'.format(len(run.thumbPages)))
         # print('debug out put.', run.thumbPages)
@@ -353,6 +353,7 @@ def thumbTen(userobj, run):
             time.sleep(15)
         else:
             print('id {} 已经赞过。'.format(id))
+
     else:
         print('无需点赞操作')
 

@@ -37,6 +37,7 @@ class Runner():
         self.logFilePath = './log/'.format(username)
         self.errFilePath = './err/'.format(username)
         # self.thumbedFileList = self.getThumbFromFile()
+        self.thumbedFileList = []
         self.debug = True
         self.session = requests.session()
         self.appid = appid#应该是本设备安装app的id 等换个设备试一下就知道了
