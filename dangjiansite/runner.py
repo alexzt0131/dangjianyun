@@ -326,6 +326,7 @@ class Runner():
         else:
             print('rjson', rjson)
             self.multiThumbed.append(id)
+            self.thumbedPages.remove(id)#不成功的时候也要去掉不然总会选到
             self.writeThumb2File(id=id)
         log = '点赞：{}'.format(rjson)
         self.writeLog2File(log)
