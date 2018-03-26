@@ -130,7 +130,7 @@ class Runner():
         excuteTimes = {}
 
         credInfo = self.getCredItinfo()
-        # print(credInfo)
+        print(credInfo)
         currentScore = credInfo[0]
 
         # 点赞次数
@@ -322,10 +322,10 @@ class Runner():
                 return (detail, thumbInfo)
         elif rjson['code'] == '500' and rjson['msg'] == '评论过快，请求休息一会':
             print('因评论过快，等待一段时间')
-            time.sleep(18)
+            time.sleep(20)
         else:
             print('rjson', rjson)
-            self.multiThumbed.append(id)
+            # self.multiThumbed.append(id)
             self.thumbedPages.remove(id)#不成功的时候也要去掉不然总会选到
             self.writeThumb2File(id=id)
         log = '点赞：{}'.format(rjson)
