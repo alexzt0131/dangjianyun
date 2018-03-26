@@ -63,7 +63,7 @@
         {% endfor %}
         <label class="title-lable"><b>在线学习：</b></label>
         {% for study in studys %}
-            <p><b class="show-detail-counter">{{ forloop.counter }}.</b>答案：{{ study.title }}<span class="show-detail-time">{{ study.create_time }}</span></p>
+            <p><b class="show-detail-counter">{{ forloop.counter }}.</b>主题：{{ study.title }}<span class="show-detail-time">{{ study.create_time }}</span></p>
             <p>发布内容：{{ study.reply }}</p>
         {% endfor %}
 
