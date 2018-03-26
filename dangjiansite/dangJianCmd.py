@@ -45,14 +45,16 @@ def initQa():
     :return:
     '''
     a = getAnswersFromFile()
-    print(a)
+    # print(a)
 
     for i in a:
+        # print(i)
         Qa.objects.create(
             question=i[0],
             answer=i[1],
             answerText=i[2]
         ).save()
+
 #已完成
 def isFinish(userobj, run):
     '''
@@ -203,8 +205,9 @@ def viewPublic(userobj, run):
     :param run:
     :return:
     '''
-    viewTimes = run.getExcuteTimes()['view']
-    while viewTimes > 0:
+    # viewTimes = run.getExcuteTimes()['view']
+    while run.getExcuteTimes()['view'] > 0:
+        print('需发布{}个党员视野'.format(run.getExcuteTimes()['view']))
     # for i in range(2):#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
         print('已经发布{}个'.format(len(run.viewsResults)))
         detail, publicContent = run.doView()
@@ -230,7 +233,7 @@ def viewPublic(userobj, run):
         s = re.compile(pat).sub('', text)
         dobj.viewDetail = s
         dobj.save()
-        viewTimes = run.getExcuteTimes()['view']
+        # viewTimes = run.getExcuteTimes()['view']
         time.sleep(2)
     else:
         print('无需党员视野发布操作')
@@ -365,23 +368,24 @@ def main(userobj):
 
     # 初始化答案
     if len(Qa.objects.all()) == 0:
+        print(len(Qa.objects.all()))
         initQa()
 
     run = Runner(username=userobj.idjinfo.djusername, password=decodeStr(userobj.idjinfo.djpasswd))
-
-    try:
-        thumbTen(userobj=userobj, run=run)
-    except Exception as e:
-        print(e)
-        logging.exception("msg: {}.".format(str(e)))
-        # ErrLog.objects.create(idjinfo=userobj.idjinfo, content=str(e))
-
-    try:
-        help(userobj=userobj, run=run)
-    except Exception as e:
-        print(e)
-        logging.exception("msg: {}.".format(str(e)))
-        # ErrLog.objects.create(idjinfo=userobj.idjinfo, content=str(e))
+    #
+    # try:
+    #     thumbTen(userobj=userobj, run=run)
+    # except Exception as e:
+    #     print(e)
+    #     logging.exception("msg: {}.".format(str(e)))
+    #     # ErrLog.objects.create(idjinfo=userobj.idjinfo, content=str(e))
+    #
+    # try:
+    #     help(userobj=userobj, run=run)
+    # except Exception as e:
+    #     print(e)
+    #     logging.exception("msg: {}.".format(str(e)))
+    #     # ErrLog.objects.create(idjinfo=userobj.idjinfo, content=str(e))
 
     try:
         viewPublic(userobj=userobj, run=run)
@@ -390,59 +394,59 @@ def main(userobj):
         logging.exception("msg: {}.".format(str(e)))
         # ErrLog.objects.create(idjinfo=userobj.idjinfo, content=str(e))
 
-    try:
-        exam(userobj=userobj, run=run)
-    except Exception as e:
-        print(e)
-        logging.exception("msg: {}.".format(str(e)))
-        # ErrLog.objects.create(idjinfo=userobj.idjinfo, content=str(e))
+    # try:
+    #     exam(userobj=userobj, run=run)
+    # except Exception as e:
+    #     print(e)
+    #     logging.exception("msg: {}.".format(str(e)))
+    #     # ErrLog.objects.create(idjinfo=userobj.idjinfo, content=str(e))
+    #
+    # try:
+    #     study(userobj=userobj, run=run)
+    # except Exception as e:
+    #     print(e)
+    #     logging.exception("msg: {}.".format(str(e)))
+    #     # ErrLog.objects.create(idjinfo=userobj.idjinfo, content=str(e))
 
-    try:
-        study(userobj=userobj, run=run)
-    except Exception as e:
-        print(e)
-        logging.exception("msg: {}.".format(str(e)))
-        # ErrLog.objects.create(idjinfo=userobj.idjinfo, content=str(e))
 
-
-    try:
-        if isFinish(userobj=userobj, run=run):
-            print('in finish')
-
-            flag = DailyResult.objects.filter(create_day=getFormedDateStr()).filter(idjinfo=userobj.idjinfo)
-
-            if len(flag) == 0:#没有该用户当日的结果
-                print('flag True')
-                # 将结果写入当日的数据
-
-                results = run.getCredItinfo()[1]
-                print(results)
-                DailyResult.objects.create(
-                    idjinfo=userobj.idjinfo,
-                    thumb=results['信息评论'],
-                    view=results['党员视角发布'],
-                    hlep=results['互助广场回答'],
-                    exam=results['在线知识竞答'],
-                    study1=results['在线阅读学习资料'],
-                    study2=results['学习资料写体会'],
-                    conLogin=results['连续登录'],
-                    mobileLogin=results['手机端登录'],
-                ).save()
-                print('end..')
-                pass
-            else:
-                print('{}当日详情已记录。'.format(userobj.idjinfo.djusername))
-
-        else:
-            print('*'*88)
-            print('有未完成项目，重启main函数。')
-            scores = checkScore(run)
-            for k, v in scores.items():
-                print('{}:{}'.format(k, v))
-            main(userobj)
-    except Exception as e:
-        print(e)
-        logging.exception("msg: {}.".format(str(e)))
+    # try:
+    #     if isFinish(userobj=userobj, run=run):
+    #         print('in finish')
+    #
+    #         flag = DailyResult.objects.filter(create_day=getFormedDateStr()).filter(idjinfo=userobj.idjinfo)
+    #
+    #         if len(flag) == 0:#没有该用户当日的结果
+    #             print('flag True')
+    #             # 将结果写入当日的数据
+    #
+    #             results = run.getCredItinfo()[1]
+    #             print(results)
+    #             DailyResult.objects.create(
+    #                 idjinfo=userobj.idjinfo,
+    #                 thumb=results['信息评论'],
+    #                 view=results['党员视角发布'],
+    #                 hlep=results['互助广场回答'],
+    #                 exam=results['在线知识竞答'],
+    #                 study1=results['在线阅读学习资料'],
+    #                 study2=results['学习资料写体会'],
+    #                 conLogin=results['连续登录'],
+    #                 mobileLogin=results['手机端登录'],
+    #             ).save()
+    #             print('end..')
+    #             pass
+    #         else:
+    #             print('{}当日详情已记录。'.format(userobj.idjinfo.djusername))
+    #
+    #     else:
+    #         print('*'*88)
+    #         print('有未完成项目，重启main函数。')
+    #         scores = checkScore(run)
+    #         for k, v in scores.items():
+    #             print('{}:{}'.format(k, v))
+    #         main(userobj)
+    # except Exception as e:
+    #     print(e)
+    #     logging.exception("msg: {}.".format(str(e)))
 
 
 
@@ -451,10 +455,9 @@ def main(userobj):
 
 
 if __name__ == "__main__":
-
-
+#正在逐条测试功能
     for i in djusers:
-        print(i.iuser)
+        print(i.iuser.idjinfo)
         # run = Runner(username=i.iuser.idjinfo.djusername, password=decodeStr(i.iuser.idjinfo.djpasswd))
         main(i.iuser)
     # print(datetime.datetime.now().strftime("%H:%M:%S"))

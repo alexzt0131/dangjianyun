@@ -1,4 +1,8 @@
 import os, django
+
+from dangjiansite.djfuncs import getAnswersFromFile
+from dangjiansite.runner import Runner
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dangjianyun.settings")
 django.setup()
 from dangjiansite.models import Qa
@@ -10,9 +14,7 @@ from dangjiansite.models import Qa
 # print(answerText, answer)
 #
 
+run = Runner(username='024549', password='Aa1234')
+viewTimes = run.getExcuteTimes()
 
-# Qa.objects.all().delete()
-
-with open('../answers/new19.csv') as f:
-    for i in f:
-        print(i)
+print(viewTimes)

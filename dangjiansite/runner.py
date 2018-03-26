@@ -647,19 +647,21 @@ class Runner():
         answers = []
         # 先得到答案
 
+
         for i in ids:
-            # odict = collections.OrderedDict()
-            # print(id)
-            answerText = getAnswer(i['content'])[2]
-            answer = getAnswer(i['content'])[1]
-            # temp = odict[i['id']] = answers
+            # 丛书据库获得答案
+            correctAnswer = Qa.objects.filter(question__contains=i['content'])[0]
+            answerText = correctAnswer.answerText
+            answer = correctAnswer.answer
+            #从文键获得答案
+            # answerText = getAnswer(i['content'])[2]
+            # answer = getAnswer(i['content'])[1]
             temp = {'index': i['id'], 'answer': answer}
             qa = {'index': i['id'], 'answer': answer, 'answerText': answerText}
             self.qaList.append(qa)
             print(qa, i['content'])
             answers.append(temp)
             time.sleep(1)
-        # print(answers)
         hdata = {
             'token': self.token,
             'appid': self.appid,

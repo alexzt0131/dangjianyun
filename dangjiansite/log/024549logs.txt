@@ -77,3 +77,6 @@
 23:11:49:学习recordFeeling：{'msg': '操作成功', 'code': '200'}
 23:11:49:学习readTime：{'msg': '操作成功', 'code': '200'}
 20:35:16:点赞：{'code': '500', 'msg': '评论过快，请求休息一会'}
+09:16:16:帮助：{'time': '2018-03-26 09:16', 're_cmt': {'comment': '', 'name': ''}, 'special': '0', 'special_rgb': '', 'id': '7720183', 'is_praised': '0', 'favicon': 'https://mapi.dangjianwang.com/static/images/v3/myhead.png', 'code': '200', 'msg': '操作成功', 'comment': '不忘初心，牢记使命！', 'uid': '261562', 'praises': '0', 'special_name': '', 'name': '刘耀彬'}
+09:16:16:帮助：{'time': '2018-03-26 09:16', 're_cmt': {'comment': '', 'name': ''}, 'special': '0', 'special_rgb': '', 'id': '7720186', 'is_praised': '0', 'favicon': 'https://mapi.dangjianwang.com/static/images/v3/myhead.png', 'code': '200', 'msg': '操作成功', 'comment': '毫不动摇坚持中国共产党领导', 'uid': '261562', 'praises': '0', 'special_name': '', 'name': '刘耀彬'}
+09:16:16:帮助：{'time': '2018-03-26 09:16', 're_cmt': {'comment': '', 'name': ''}, 'special': '0', 'special_rgb': '', 'id': '7720189', 'is_praised': '0', 'favicon': 'https://mapi.dangjianwang.com/static/images/v3/myhead.png', 'code': '200', 'msg': '操作成功', 'comment': '毫不动摇坚持中国共产党领导', 'uid': '261562', 'praises': '0', 'special_name': '', 'name': '刘耀彬'}
