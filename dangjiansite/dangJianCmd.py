@@ -194,7 +194,7 @@ def help(userobj, run):
             dobj.hlepDetail = s
             dobj.save()
         # helpTimes = run.getExcuteTimes()['help']
-        time.sleep(2)
+        time.sleep(5)
     else:
         print('无需互助操作')
 
@@ -233,7 +233,7 @@ def viewPublic(userobj, run):
         dobj.viewDetail = s
         dobj.save()
         # viewTimes = run.getExcuteTimes()['view']
-        time.sleep(2)
+        time.sleep(5)
     else:
         print('无需党员视野发布操作')
 
