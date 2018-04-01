@@ -1608,3 +1608,161 @@ requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected(
 2018-03-26 19:58:01,848 - base.py[line:152] - WARNING: Not Found: /static/admin/js/urlify.js
 2018-03-26 19:58:01,850 - base.py[line:152] - WARNING: Not Found: /static/admin/js/prepopulate.min.js
 2018-03-26 19:58:01,854 - base.py[line:152] - WARNING: Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+2018-03-26 20:15:51,494 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-26 21:32:50,991 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-03-26 22:11:37,894 - base.py[line:152] - WARNING: Not Found: /
+2018-03-27 01:27:12,585 - base.py[line:152] - WARNING: Not Found: /
+2018-03-27 01:43:27,126 - base.py[line:152] - WARNING: Not Found: /
+2018-03-27 01:43:27,130 - base.py[line:152] - WARNING: Not Found: /
+2018-03-27 01:43:27,152 - base.py[line:152] - WARNING: Not Found: /
+2018-03-27 01:43:27,156 - base.py[line:152] - WARNING: Not Found: /
+2018-03-27 01:43:34,197 - base.py[line:152] - WARNING: Not Found: /
+2018-03-27 01:43:34,206 - base.py[line:152] - WARNING: Not Found: /
+2018-03-27 06:00:11,550 - base.py[line:152] - WARNING: Not Found: /404/search_children.js
+2018-03-27 06:10:53,076 - base.py[line:152] - WARNING: Not Found: /
+2018-03-27 08:47:18,552 - dangJianCmd.py[line:394] - ERROR: msg: Expecting value: line 1 column 1 (char 0).
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 391, in main
+    viewPublic(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 212, in viewPublic
+    detail, publicContent = run.doView()
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 411, in doView
+    verify=False).json()
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/local/python3/lib/python3.6/json/__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/python3/lib/python3.6/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/python3/lib/python3.6/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-03-27 08:50:10,492 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-27 08:53:52,825 - dangJianCmd.py[line:408] - ERROR: msg: 'NoneType' object is not iterable.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 258, in study
+    run.doStudy(mid=mid)
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 570, in doStudy
+    self.studyRsults.update(recordFeeling(content=content))
+TypeError: 'NoneType' object is not iterable
+2018-03-27 08:53:52,854 - dangJianCmd.py[line:449] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 413, in main
+    if isFinish(userobj=userobj, run=run):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 66, in isFinish
+    scores = checkScore(run)
+  File "/root/www/dangjianyun/dangjiansite/views.py", line 335, in checkScore
+    'thumb': credInfo[1]['信息评论'],
+KeyError: '信息评论'
+2018-03-27 09:01:38,459 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-27 20:45:08,758 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-03-27 20:45:12,106 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-03-28 00:19:38,858 - dangJianCmd.py[line:408] - ERROR: msg: 'NoneType' object is not iterable.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 258, in study
+    run.doStudy(mid=mid)
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 570, in doStudy
+    self.studyRsults.update(recordFeeling(content=content))
+TypeError: 'NoneType' object is not iterable
+2018-03-28 00:24:50,737 - dangJianCmd.py[line:408] - ERROR: msg: 'NoneType' object is not iterable.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 258, in study
+    run.doStudy(mid=mid)
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 570, in doStudy
+    self.studyRsults.update(recordFeeling(content=content))
+TypeError: 'NoneType' object is not iterable
+2018-03-28 00:30:02,293 - dangJianCmd.py[line:408] - ERROR: msg: 'NoneType' object is not iterable.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 258, in study
+    run.doStudy(mid=mid)
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 570, in doStudy
+    self.studyRsults.update(recordFeeling(content=content))
+TypeError: 'NoneType' object is not iterable
+2018-03-28 00:32:55,777 - base.py[line:152] - WARNING: Not Found: /
+2018-03-28 00:32:55,954 - base.py[line:152] - WARNING: Not Found: /
+2018-03-28 00:33:01,233 - base.py[line:152] - WARNING: Not Found: /
+2018-03-28 00:33:01,246 - base.py[line:152] - WARNING: Not Found: /
+2018-03-28 00:33:01,247 - base.py[line:152] - WARNING: Not Found: /
+2018-03-28 00:33:01,249 - base.py[line:152] - WARNING: Not Found: /
+2018-03-28 00:33:01,250 - base.py[line:152] - WARNING: Not Found: /
+2018-03-28 00:33:06,763 - base.py[line:152] - WARNING: Not Found: /
+2018-03-28 06:13:55,457 - base.py[line:152] - WARNING: Not Found: /
+2018-03-28 08:30:10,386 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-28 09:05:02,514 - base.py[line:152] - WARNING: Not Found: /
+2018-03-28 09:27:28,493 - base.py[line:152] - WARNING: Not Found: /
+2018-03-28 17:27:15,508 - base.py[line:152] - WARNING: Not Found: /
+2018-03-28 17:40:42,545 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-29 00:34:43,138 - dangJianCmd.py[line:408] - ERROR: msg: 'NoneType' object is not iterable.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 258, in study
+    run.doStudy(mid=mid)
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 570, in doStudy
+    self.studyRsults.update(recordFeeling(content=content))
+TypeError: 'NoneType' object is not iterable
+2018-03-29 01:23:11,746 - base.py[line:152] - WARNING: Not Found: /check_proxy
+2018-03-29 01:39:34,583 - base.py[line:152] - WARNING: Not Found: /
+2018-03-29 06:11:48,549 - base.py[line:152] - WARNING: Not Found: /
+2018-03-29 08:19:35,233 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-29 08:19:45,954 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-29 08:39:51,544 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-29 08:50:26,996 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-29 09:27:57,834 - base.py[line:152] - WARNING: Not Found: /
+2018-03-29 17:35:34,502 - base.py[line:152] - WARNING: Not Found: /
+2018-03-29 17:36:27,558 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-03-29 20:38:48,096 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-29 23:01:25,728 - base.py[line:152] - WARNING: Not Found: /
+2018-03-29 23:01:46,893 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-30 01:29:51,584 - base.py[line:152] - WARNING: Not Found: /
+2018-03-30 01:52:05,731 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-03-30 03:39:17,383 - base.py[line:152] - WARNING: Not Found: /
+2018-03-30 05:15:34,048 - base.py[line:152] - WARNING: Not Found: /
+2018-03-30 06:22:01,980 - base.py[line:152] - WARNING: Not Found: /404/search_children.js
+2018-03-30 09:30:23,258 - base.py[line:152] - WARNING: Not Found: /
+2018-03-30 13:52:00,491 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-30 14:17:35,053 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-30 14:18:49,253 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-03-30 17:03:15,208 - base.py[line:152] - WARNING: Not Found: /manager/html
+2018-03-30 17:29:20,269 - base.py[line:152] - WARNING: Not Found: /
+2018-03-31 01:29:41,052 - base.py[line:152] - WARNING: Not Found: /
+2018-03-31 06:11:31,353 - base.py[line:152] - WARNING: Not Found: /
+2018-03-31 09:27:30,885 - base.py[line:152] - WARNING: Not Found: /
+2018-03-31 17:27:28,720 - base.py[line:152] - WARNING: Not Found: /
+2018-03-31 23:20:56,216 - base.py[line:152] - WARNING: Not Found: /manager/html
+2018-04-01 00:24:57,827 - dangJianCmd.py[line:408] - ERROR: msg: 'NoneType' object is not iterable.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 258, in study
+    run.doStudy(mid=mid)
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 570, in doStudy
+    self.studyRsults.update(recordFeeling(content=content))
+TypeError: 'NoneType' object is not iterable
+2018-04-01 01:31:02,333 - base.py[line:152] - WARNING: Not Found: /
+2018-04-01 07:40:33,198 - base.py[line:152] - WARNING: Not Found: /
+2018-04-01 09:28:37,835 - base.py[line:152] - WARNING: Not Found: /
+2018-04-01 10:33:57,442 - base.py[line:152] - WARNING: Not Found: /
+2018-04-01 10:33:57,744 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-01 10:34:07,573 - base.py[line:152] - WARNING: Not Found: /image/test.jpg
+2018-04-01 10:36:00,278 - base.py[line:152] - WARNING: Not Found: /images/swiper
+2018-04-01 10:36:03,872 - base.py[line:152] - WARNING: Not Found: /images/swiper/1.jpg
+2018-04-01 11:18:45,920 - base.py[line:152] - WARNING: Not Found: /
+2018-04-01 11:22:18,625 - base.py[line:152] - WARNING: Not Found: /manager/html
+2018-04-01 11:26:20,894 - base.py[line:152] - WARNING: Not Found: /
+2018-04-01 11:26:20,920 - base.py[line:152] - WARNING: Not Found: /
+2018-04-01 13:28:16,272 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-04-01 13:44:03,123 - base.py[line:152] - WARNING: Not Found: /1qiWaz2wRsx3eXdc4rDfv5tgb6yhn7Uujm8Lik999
+2018-04-01 16:35:37,972 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-01 16:37:39,626 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-01 17:32:55,551 - base.py[line:152] - WARNING: Not Found: /
+2018-04-01 18:52:17,789 - base.py[line:152] - WARNING: Not Found: /
+2018-04-01 22:16:42,015 - base.py[line:152] - WARNING: Not Found: /favicon.ico
