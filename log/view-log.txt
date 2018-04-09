@@ -1766,3 +1766,882 @@ TypeError: 'NoneType' object is not iterable
 2018-04-01 17:32:55,551 - base.py[line:152] - WARNING: Not Found: /
 2018-04-01 18:52:17,789 - base.py[line:152] - WARNING: Not Found: /
 2018-04-01 22:16:42,015 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-02 03:25:02,773 - base.py[line:152] - WARNING: Not Found: /
+2018-04-02 08:57:51,880 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-02 08:57:53,767 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-02 09:30:42,578 - base.py[line:152] - WARNING: Not Found: /
+2018-04-02 09:57:17,056 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-04-02 12:00:14,195 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-04-02 13:13:23,601 - dangJianCmd.py[line:394] - ERROR: msg: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',)).
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 391, in main
+    viewPublic(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 212, in viewPublic
+    detail, publicContent = run.doView()
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 411, in doView
+    verify=False).json()
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 555, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 490, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2018-04-02 13:21:06,198 - dangJianCmd.py[line:408] - ERROR: msg: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',)).
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 258, in study
+    run.doStudy(mid=mid)
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 570, in doStudy
+    self.studyRsults.update(recordFeeling(content=content))
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 508, in recordFeeling
+    verify=False).json()
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 555, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 490, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2018-04-02 13:30:10,099 - dangJianCmd.py[line:401] - ERROR: msg: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',)).
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 398, in main
+    exam(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 87, in exam
+    run.doExam()  #
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 634, in doExam
+    verify=False).json()
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 555, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 490, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2018-04-02 13:36:21,460 - dangJianCmd.py[line:408] - ERROR: msg: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',)).
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 258, in study
+    run.doStudy(mid=mid)
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 570, in doStudy
+    self.studyRsults.update(recordFeeling(content=content))
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 508, in recordFeeling
+    verify=False).json()
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 555, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 490, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2018-04-02 13:37:05,633 - dangJianCmd.py[line:401] - ERROR: msg: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',)).
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 440, in send
+    timeout=timeout
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 639, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/util/retry.py", line 357, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 601, in urlopen
+    chunked=chunked)
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/usr/local/python3/lib/python3.6/site-packages/urllib3/connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/python3/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 398, in main
+    exam(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 87, in exam
+    run.doExam()  #
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 676, in doExam
+    verify=False).json()
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 555, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 508, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/sessions.py", line 618, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/adapters.py", line 490, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2018-04-02 14:40:04,383 - base.py[line:152] - WARNING: Not Found: /
+2018-04-02 17:30:11,224 - base.py[line:152] - WARNING: Not Found: /
+2018-04-02 17:47:06,683 - base.py[line:152] - WARNING: Not Found: /
+2018-04-02 17:47:06,961 - base.py[line:152] - WARNING: Not Found: /
+2018-04-02 17:47:06,969 - base.py[line:152] - WARNING: Not Found: /
+2018-04-02 17:47:17,298 - base.py[line:152] - WARNING: Not Found: /
+2018-04-02 17:47:17,299 - base.py[line:152] - WARNING: Not Found: /
+2018-04-02 17:47:17,336 - base.py[line:152] - WARNING: Not Found: /
+2018-04-02 17:47:25,137 - base.py[line:152] - WARNING: Not Found: /
+2018-04-02 19:30:39,637 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-02 19:37:59,842 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-02 19:38:33,770 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-02 19:42:59,669 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-02 19:44:13,417 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-02 22:31:00,691 - base.py[line:152] - WARNING: Not Found: /wp-includes/js/comment-reply.min.js
+2018-04-02 22:31:00,943 - base.py[line:152] - WARNING: Not Found: /skins/vector/csshover.htc
+2018-04-02 22:31:01,160 - base.py[line:152] - WARNING: Not Found: /misc/states.js
+2018-04-02 22:31:09,718 - base.py[line:152] - WARNING: Not Found: /include/js/md5.js
+2018-04-02 22:31:10,237 - base.py[line:152] - WARNING: Not Found: /include/js/common.js
+2018-04-02 22:31:11,383 - base.py[line:152] - WARNING: Not Found: /include/js/ajax.js
+2018-04-02 22:31:12,325 - base.py[line:152] - WARNING: Not Found: /res/js/dev/pages/common/global.js
+2018-04-02 22:31:12,628 - base.py[line:152] - WARNING: Not Found: /js/wind_editor.js
+2018-04-02 22:31:13,074 - base.py[line:152] - WARNING: Not Found: /styles/prosilver/template/forum_fn.js
+2018-04-02 22:31:14,198 - base.py[line:152] - WARNING: Not Found: /styles/prosilver/template/styleswitcher.js
+2018-04-02 22:31:14,932 - base.py[line:152] - WARNING: Not Found: /editor/ubb/uploader.js
+2018-04-02 22:31:15,139 - base.py[line:152] - WARNING: Not Found: /template/default/style.css
+2018-04-02 22:31:15,673 - base.py[line:152] - WARNING: Not Found: /images/js/common.js
+2018-04-02 22:31:15,871 - base.py[line:152] - WARNING: Not Found: /templets/style/dede.css
+2018-04-02 22:31:16,254 - base.py[line:152] - WARNING: Not Found: /include/dedeajax2.js
+2018-04-02 22:31:16,486 - base.py[line:152] - WARNING: Not Found: /images/default/inc.js
+2018-04-02 22:31:16,678 - base.py[line:152] - WARNING: Not Found: /js/lang/core/zh-cn.js
+2018-04-02 22:31:16,972 - base.py[line:152] - WARNING: Not Found: /js/lang/cms/zh-cn.js
+2018-04-02 22:31:17,167 - base.py[line:152] - WARNING: Not Found: /d/js/acmsd/ecms_dialog.js
+2018-04-02 22:31:17,436 - base.py[line:152] - WARNING: Not Found: /skin/default/js/tabs.js
+2018-04-02 22:31:17,676 - base.py[line:152] - WARNING: Not Found: /media/system/js/tab.js
+2018-04-02 22:31:17,907 - base.py[line:152] - WARNING: Not Found: /media/system/css/mootree.css
+2018-04-02 22:31:18,162 - base.py[line:152] - WARNING: Not Found: /lang/zh/front.js
+2018-04-02 22:31:18,361 - base.py[line:152] - WARNING: Not Found: /style/default/content.css
+2018-04-02 22:31:18,650 - base.py[line:152] - WARNING: Not Found: /lang/zh/edit.js
+2018-04-02 22:31:18,957 - base.py[line:152] - WARNING: Not Found: /rockmongo/
+2018-04-02 22:31:19,212 - base.py[line:152] - WARNING: Not Found: /server-status
+2018-04-02 22:31:19,580 - base.py[line:152] - WARNING: Not Found: /ueditor.all.js
+2018-04-02 22:31:19,844 - base.py[line:152] - WARNING: Not Found: /wikilib.d/PmWiki.ChangeLog
+2018-04-02 22:31:20,116 - base.py[line:152] - WARNING: Not Found: /4e5e5d7364f443e28fbf0d3ae744a59a
+2018-04-02 22:31:20,664 - base.py[line:152] - WARNING: Not Found: /jenkins/
+2018-04-02 22:31:20,940 - base.py[line:152] - WARNING: Not Found: /console/login/LoginForm.jsp
+2018-04-02 22:31:21,185 - base.py[line:152] - WARNING: Not Found: /solr/
+2018-04-02 22:31:21,429 - base.py[line:152] - WARNING: Not Found: /
+2018-04-03 01:05:49,263 - base.py[line:152] - WARNING: Not Found: /
+2018-04-03 01:29:53,788 - base.py[line:152] - WARNING: Not Found: /
+2018-04-03 03:38:18,081 - base.py[line:152] - WARNING: Not Found: /
+2018-04-03 06:17:35,667 - base.py[line:152] - WARNING: Not Found: /404/search_children.js
+2018-04-03 06:41:47,843 - base.py[line:152] - WARNING: Not Found: /
+2018-04-03 06:41:51,028 - base.py[line:152] - WARNING: Not Found: /echo.php
+2018-04-03 09:35:23,755 - base.py[line:152] - WARNING: Not Found: /
+2018-04-03 10:33:48,641 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-04-03 12:09:03,451 - base.py[line:152] - WARNING: Not Found: /webservice/proxy/validate
+2018-04-03 17:29:55,906 - base.py[line:152] - WARNING: Not Found: /
+2018-04-03 18:55:22,152 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-03 19:51:15,832 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-03 19:51:20,128 - base.py[line:152] - WARNING: Not Found: /favicon.ico
+2018-04-03 23:12:32,222 - base.py[line:152] - WARNING: Not Found: /
+2018-04-04 01:33:08,520 - base.py[line:152] - WARNING: Not Found: /
+2018-04-04 06:08:57,778 - base.py[line:152] - WARNING: Not Found: /
+2018-04-04 09:17:10,984 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-04-04 09:32:04,064 - base.py[line:152] - WARNING: Not Found: /
+2018-04-04 12:42:10,706 - base.py[line:152] - WARNING: Not Found: /
+2018-04-04 17:30:41,528 - base.py[line:152] - WARNING: Not Found: /
+2018-04-05 01:09:11,849 - base.py[line:152] - WARNING: Not Found: /check_proxy
+2018-04-05 01:38:46,155 - base.py[line:152] - WARNING: Not Found: /
+2018-04-05 06:13:22,243 - base.py[line:152] - WARNING: Not Found: /
+2018-04-05 07:40:56,269 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-04-05 09:28:03,314 - base.py[line:152] - WARNING: Not Found: /
+2018-04-05 13:19:59,057 - dangJianCmd.py[line:380] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 312, in thumbTen
+    while run.getExcuteTimes()['thumb'] > 0:
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 137, in getExcuteTimes
+    thumbScore = credInfo[1]['信息评论'].split('/')[0]
+KeyError: '信息评论'
+2018-04-05 13:19:59,136 - dangJianCmd.py[line:387] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 384, in main
+    help(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 168, in help
+    while run.getExcuteTimes()['help'] > 0:
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 137, in getExcuteTimes
+    thumbScore = credInfo[1]['信息评论'].split('/')[0]
+KeyError: '信息评论'
+2018-04-05 13:19:59,171 - dangJianCmd.py[line:394] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 391, in main
+    viewPublic(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 209, in viewPublic
+    while run.getExcuteTimes()['view'] > 0:
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 137, in getExcuteTimes
+    thumbScore = credInfo[1]['信息评论'].split('/')[0]
+KeyError: '信息评论'
+2018-04-05 13:19:59,206 - dangJianCmd.py[line:401] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 398, in main
+    exam(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 86, in exam
+    while run.getExcuteTimes()['exam'] > 0:#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 137, in getExcuteTimes
+    thumbScore = credInfo[1]['信息评论'].split('/')[0]
+KeyError: '信息评论'
+2018-04-05 13:19:59,241 - dangJianCmd.py[line:408] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 249, in study
+    while run.getExcuteTimes()['study'] > 0:
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 137, in getExcuteTimes
+    thumbScore = credInfo[1]['信息评论'].split('/')[0]
+KeyError: '信息评论'
+2018-04-05 13:19:59,282 - dangJianCmd.py[line:449] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 413, in main
+    if isFinish(userobj=userobj, run=run):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 66, in isFinish
+    scores = checkScore(run)
+  File "/root/www/dangjianyun/dangjiansite/views.py", line 335, in checkScore
+    'thumb': credInfo[1]['信息评论'],
+KeyError: '信息评论'
+2018-04-05 17:31:13,745 - base.py[line:152] - WARNING: Not Found: /
+2018-04-05 18:51:10,638 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-04-06 01:29:38,877 - base.py[line:152] - WARNING: Not Found: /
+2018-04-06 05:56:49,354 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-04-06 06:32:00,647 - base.py[line:152] - WARNING: Not Found: /404/search_children.js
+2018-04-06 06:32:02,779 - base.py[line:152] - WARNING: Not Found: /
+2018-04-06 09:30:44,300 - base.py[line:152] - WARNING: Not Found: /
+2018-04-06 17:32:16,966 - base.py[line:152] - WARNING: Not Found: /
+2018-04-07 01:38:48,570 - base.py[line:152] - WARNING: Not Found: /
+2018-04-07 04:15:32,436 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-04-07 08:02:14,189 - base.py[line:152] - WARNING: Not Found: /
+2018-04-07 08:47:37,504 - base.py[line:152] - WARNING: Not Found: /
+2018-04-07 11:48:39,812 - base.py[line:152] - WARNING: Not Found: /
+2018-04-07 15:54:24,423 - base.py[line:152] - WARNING: Not Found: /login.cgi
+2018-04-07 17:38:39,550 - base.py[line:152] - WARNING: Not Found: /
+2018-04-08 01:38:35,697 - base.py[line:152] - WARNING: Not Found: /
+2018-04-08 02:32:54,959 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-04-08 06:28:07,100 - base.py[line:152] - WARNING: Not Found: /
+2018-04-08 08:04:28,455 - dangJianCmd.py[line:380] - ERROR: msg: Expecting value: line 1 column 1 (char 0).
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 312, in thumbTen
+    while run.getExcuteTimes()['thumb'] > 0:
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 132, in getExcuteTimes
+    credInfo = self.getCredItinfo()
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 232, in getCredItinfo
+    info = self.getRJson(url=creditInfourl)
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 190, in getRJson
+    return self.session.post(url=url, data=data, verify=False).json()
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/local/python3/lib/python3.6/json/__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/python3/lib/python3.6/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/python3/lib/python3.6/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-08 08:04:34,956 - dangJianCmd.py[line:387] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 384, in main
+    help(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 185, in help
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:04:35,439 - dangJianCmd.py[line:394] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 391, in main
+    viewPublic(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 224, in viewPublic
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:04:47,915 - dangJianCmd.py[line:401] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 398, in main
+    exam(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 102, in exam
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:10:00,619 - dangJianCmd.py[line:408] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 276, in study
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:10:02,118 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:10:02,241 - dangJianCmd.py[line:387] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 384, in main
+    help(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 185, in help
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:10:02,385 - dangJianCmd.py[line:394] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 391, in main
+    viewPublic(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 224, in viewPublic
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:10:13,898 - dangJianCmd.py[line:401] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 398, in main
+    exam(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 102, in exam
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:15:26,282 - dangJianCmd.py[line:408] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 276, in study
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:15:27,754 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:15:27,874 - dangJianCmd.py[line:387] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 384, in main
+    help(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 185, in help
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:15:29,354 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:15:30,936 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:15:32,688 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:16:04,111 - dangJianCmd.py[line:380] - ERROR: msg: 'NoneType' object is not iterable.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 324, in thumbTen
+    detail, thumbInfo = run.doThumb(id=id)
+TypeError: 'NoneType' object is not iterable
+2018-04-08 08:16:35,925 - dangJianCmd.py[line:380] - ERROR: msg: 'NoneType' object is not iterable.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 324, in thumbTen
+    detail, thumbInfo = run.doThumb(id=id)
+TypeError: 'NoneType' object is not iterable
+2018-04-08 08:16:37,338 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:16:38,784 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:16:40,415 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:16:42,064 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:17:13,692 - dangJianCmd.py[line:380] - ERROR: msg: 'NoneType' object is not iterable.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 324, in thumbTen
+    detail, thumbInfo = run.doThumb(id=id)
+TypeError: 'NoneType' object is not iterable
+2018-04-08 08:17:45,612 - dangJianCmd.py[line:380] - ERROR: msg: 'NoneType' object is not iterable.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 324, in thumbTen
+    detail, thumbInfo = run.doThumb(id=id)
+TypeError: 'NoneType' object is not iterable
+2018-04-08 08:17:47,911 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:17:49,614 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 08:17:51,635 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 09:35:29,765 - base.py[line:152] - WARNING: Not Found: /
+2018-04-08 09:49:30,223 - dangJianCmd.py[line:380] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 312, in thumbTen
+    while run.getExcuteTimes()['thumb'] > 0:
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 137, in getExcuteTimes
+    thumbScore = credInfo[1]['信息评论'].split('/')[0]
+KeyError: '信息评论'
+2018-04-08 09:49:30,258 - dangJianCmd.py[line:387] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 384, in main
+    help(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 168, in help
+    while run.getExcuteTimes()['help'] > 0:
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 137, in getExcuteTimes
+    thumbScore = credInfo[1]['信息评论'].split('/')[0]
+KeyError: '信息评论'
+2018-04-08 09:49:30,293 - dangJianCmd.py[line:394] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 391, in main
+    viewPublic(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 209, in viewPublic
+    while run.getExcuteTimes()['view'] > 0:
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 137, in getExcuteTimes
+    thumbScore = credInfo[1]['信息评论'].split('/')[0]
+KeyError: '信息评论'
+2018-04-08 09:49:30,328 - dangJianCmd.py[line:401] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 398, in main
+    exam(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 86, in exam
+    while run.getExcuteTimes()['exam'] > 0:#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 137, in getExcuteTimes
+    thumbScore = credInfo[1]['信息评论'].split('/')[0]
+KeyError: '信息评论'
+2018-04-08 09:49:30,352 - dangJianCmd.py[line:408] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 249, in study
+    while run.getExcuteTimes()['study'] > 0:
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 137, in getExcuteTimes
+    thumbScore = credInfo[1]['信息评论'].split('/')[0]
+KeyError: '信息评论'
+2018-04-08 09:49:30,387 - dangJianCmd.py[line:449] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 413, in main
+    if isFinish(userobj=userobj, run=run):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 66, in isFinish
+    scores = checkScore(run)
+  File "/root/www/dangjianyun/dangjiansite/views.py", line 335, in checkScore
+    'thumb': credInfo[1]['信息评论'],
+KeyError: '信息评论'
+2018-04-08 09:49:32,483 - dangJianCmd.py[line:380] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 377, in main
+    thumbTen(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 344, in thumbTen
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 09:49:32,766 - dangJianCmd.py[line:387] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 384, in main
+    help(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 185, in help
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 09:49:32,995 - dangJianCmd.py[line:394] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 391, in main
+    viewPublic(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 224, in viewPublic
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 09:49:44,523 - dangJianCmd.py[line:401] - ERROR: msg: list index out of range.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 398, in main
+    exam(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 102, in exam
+    dobj = getDailyDetailObj(userobj)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 148, in getDailyDetailObj
+    return DailyDetail.objects.filter(create_day=today).filter(idjinfo=loginUserObj.idjinfo)[0]
+  File "/usr/local/python3/lib/python3.6/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+2018-04-08 09:49:44,551 - dangJianCmd.py[line:408] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 405, in main
+    study(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 249, in study
+    while run.getExcuteTimes()['study'] > 0:
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 137, in getExcuteTimes
+    thumbScore = credInfo[1]['信息评论'].split('/')[0]
+KeyError: '信息评论'
+2018-04-08 09:49:44,574 - dangJianCmd.py[line:449] - ERROR: msg: '信息评论'.
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 413, in main
+    if isFinish(userobj=userobj, run=run):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 66, in isFinish
+    scores = checkScore(run)
+  File "/root/www/dangjianyun/dangjiansite/views.py", line 335, in checkScore
+    'thumb': credInfo[1]['信息评论'],
+KeyError: '信息评论'
+2018-04-08 09:57:08,159 - dangJianCmd.py[line:394] - ERROR: msg: Expecting value: line 1 column 1 (char 0).
+Traceback (most recent call last):
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 391, in main
+    viewPublic(userobj=userobj, run=run)
+  File "/root/www/dangjianyun/dangjiansite/dangJianCmd.py", line 212, in viewPublic
+    detail, publicContent = run.doView()
+  File "/root/www/dangjianyun/dangjiansite/runner.py", line 411, in doView
+    verify=False).json()
+  File "/usr/local/python3/lib/python3.6/site-packages/requests/models.py", line 892, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/local/python3/lib/python3.6/json/__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/python3/lib/python3.6/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/python3/lib/python3.6/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2018-04-08 17:41:33,890 - base.py[line:152] - WARNING: Not Found: /
+2018-04-09 01:04:32,426 - base.py[line:152] - WARNING: Not Found: /WEB_VMS/LEVEL15/
+2018-04-09 01:41:54,011 - base.py[line:152] - WARNING: Not Found: /
+2018-04-09 02:57:36,718 - base.py[line:152] - WARNING: Not Found: /cache/global/img/gs.gif
+2018-04-09 06:11:40,121 - base.py[line:152] - WARNING: Not Found: /
